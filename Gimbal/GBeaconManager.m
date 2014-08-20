@@ -70,7 +70,6 @@
     if ([self.beacons objectForKey:visit.transmitter.identifier]==nil) {
         GBeacon *newBeacon = [[GBeacon alloc]initWithVisit:visit];
         [self.beacons setObject:newBeacon forKey:visit.transmitter.identifier];
-        //encontrar la posicion del beacon
     }
 }
 
