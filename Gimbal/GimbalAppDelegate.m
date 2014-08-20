@@ -7,15 +7,38 @@
 //
 
 #import "GimbalAppDelegate.h"
+#import <FYX/FYX.h>
+#import <ContextCore/QLContextCoreConnector.h>
+#import <ContextLocation/QLPlaceEvent.h>
+#import <ContextLocation/QLPlace.h>
+
 
 @implementation GimbalAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    QLContextCoreConnector *connector = [QLContextCoreConnector new];
+    [connector enableFromViewController:self.window.rootViewController success:^
+     {
+         NSLog(@"Gimbal enabled");
+     } failure:^(NSError *error) {
+         NSLog(@"Failed to initialize gimbal %@", error);
+     }];
+    
+    [FYX setAppId:@"601fe9d96f86be4d49cf2f8e4fdb50b7018dc1c74ce4032ba8260d8cf8b1c0a4" appSecret:@"b20a5f785b517e9cfe5a82f82a7cf1d2bd12d36d039f664c76568dcf2e134c93" callbackUrl:@"combaxlabsgimbal://authcode"];
+    
+    //self.placeConnector = [[QLContextPlaceConnector alloc] init];
+    //self.placeConnector.delegate = self;
+    
     return YES;
 }
-							
+
+- (void)didGetPlaceEvent:(QLPlaceEvent *)placeEvent
+{
+    NSLog(@"did get place event %@", [placeEvent place].name);
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

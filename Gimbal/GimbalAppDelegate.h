@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ContextLocation/QLContextPlaceConnector.h>
 
-@interface GimbalAppDelegate : UIResponder <UIApplicationDelegate>
+@interface GimbalAppDelegate : UIResponder <UIApplicationDelegate, QLContextPlaceConnectorDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic) QLContextPlaceConnector *placeConnector;
 
 @end

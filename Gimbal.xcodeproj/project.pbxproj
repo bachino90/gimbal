@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB10622A198D40DD00C2D084 /* GViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB106229198D40DD00C2D084 /* GViewController.m */; };
+		EB10622D198D414E00C2D084 /* GBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10622C198D414E00C2D084 /* GBeacon.m */; };
+		EB106230198D419100C2D084 /* RoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10622F198D419100C2D084 /* RoomView.m */; };
+		EB106233198D41AE00C2D084 /* GBeaconView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB106232198D41AE00C2D084 /* GBeaconView.m */; };
+		EB106236198D41C300C2D084 /* MeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB106235198D41C300C2D084 /* MeView.m */; };
+		EB106239198D42A800C2D084 /* GBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EB106238198D42A800C2D084 /* GBeaconManager.m */; };
+		EB2D84121996D679005E4384 /* RSSIGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2D84111996D679005E4384 /* RSSIGraphView.m */; };
+		EB2D84151996E842005E4384 /* GBeaconTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2D84141996E842005E4384 /* GBeaconTableViewCell.m */; };
 		EBFF92A11983DBC9001BFE63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92A01983DBC9001BFE63 /* Foundation.framework */; };
 		EBFF92A31983DBC9001BFE63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92A21983DBC9001BFE63 /* CoreGraphics.framework */; };
 		EBFF92A51983DBC9001BFE63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92A41983DBC9001BFE63 /* UIKit.framework */; };
@@ -21,6 +29,19 @@
 		EBFF92C21983DBC9001BFE63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92A41983DBC9001BFE63 /* UIKit.framework */; };
 		EBFF92CA1983DBC9001BFE63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBFF92C81983DBC9001BFE63 /* InfoPlist.strings */; };
 		EBFF92CC1983DBC9001BFE63 /* GimbalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBFF92CB1983DBC9001BFE63 /* GimbalTests.m */; };
+		EBFF92D61983DBFF001BFE63 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92D51983DBFF001BFE63 /* CoreBluetooth.framework */; };
+		EBFF92D81983DC07001BFE63 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92D71983DC07001BFE63 /* CoreLocation.framework */; };
+		EBFF92DA1983DC11001BFE63 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92D91983DC11001BFE63 /* CoreData.framework */; };
+		EBFF92DC1983DC20001BFE63 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92DB1983DC20001BFE63 /* libz.dylib */; };
+		EBFF92DE1983DC28001BFE63 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92DD1983DC28001BFE63 /* MapKit.framework */; };
+		EBFF92E01983DC2F001BFE63 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92DF1983DC2F001BFE63 /* Security.framework */; };
+		EBFF92EB1983E378001BFE63 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92E21983E378001BFE63 /* Common.framework */; };
+		EBFF92EC1983E378001BFE63 /* ContextCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92E51983E378001BFE63 /* ContextCore.framework */; };
+		EBFF92ED1983E378001BFE63 /* ContextLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92E81983E378001BFE63 /* ContextLocation.framework */; };
+		EBFF92EE1983E378001BFE63 /* DataModels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EBFF92EA1983E378001BFE63 /* DataModels.bundle */; };
+		EBFF92F31983E38F001BFE63 /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92EF1983E38F001BFE63 /* FYX.framework */; };
+		EBFF92F41983E38F001BFE63 /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFF92F11983E38F001BFE63 /* NetworkServices.framework */; };
+		EBFF92F61983F5E5001BFE63 /* UserContext.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBFF92F51983F5E5001BFE63 /* UserContext.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +55,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB106228198D40DD00C2D084 /* GViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GViewController.h; sourceTree = "<group>"; };
+		EB106229198D40DD00C2D084 /* GViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GViewController.m; sourceTree = "<group>"; };
+		EB10622B198D414E00C2D084 /* GBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBeacon.h; sourceTree = "<group>"; };
+		EB10622C198D414E00C2D084 /* GBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBeacon.m; sourceTree = "<group>"; };
+		EB10622E198D419100C2D084 /* RoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomView.h; sourceTree = "<group>"; };
+		EB10622F198D419100C2D084 /* RoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomView.m; sourceTree = "<group>"; };
+		EB106231198D41AE00C2D084 /* GBeaconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBeaconView.h; sourceTree = "<group>"; };
+		EB106232198D41AE00C2D084 /* GBeaconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBeaconView.m; sourceTree = "<group>"; };
+		EB106234198D41C300C2D084 /* MeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeView.h; sourceTree = "<group>"; };
+		EB106235198D41C300C2D084 /* MeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeView.m; sourceTree = "<group>"; };
+		EB106237198D42A800C2D084 /* GBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBeaconManager.h; sourceTree = "<group>"; };
+		EB106238198D42A800C2D084 /* GBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBeaconManager.m; sourceTree = "<group>"; };
+		EB2D84101996D679005E4384 /* RSSIGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSIGraphView.h; sourceTree = "<group>"; };
+		EB2D84111996D679005E4384 /* RSSIGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSIGraphView.m; sourceTree = "<group>"; };
+		EB2D84131996E842005E4384 /* GBeaconTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBeaconTableViewCell.h; sourceTree = "<group>"; };
+		EB2D84141996E842005E4384 /* GBeaconTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBeaconTableViewCell.m; sourceTree = "<group>"; };
 		EBFF929D1983DBC9001BFE63 /* Gimbal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gimbal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFF92A01983DBC9001BFE63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EBFF92A21983DBC9001BFE63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +90,19 @@
 		EBFF92C71983DBC9001BFE63 /* GimbalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GimbalTests-Info.plist"; sourceTree = "<group>"; };
 		EBFF92C91983DBC9001BFE63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EBFF92CB1983DBC9001BFE63 /* GimbalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GimbalTests.m; sourceTree = "<group>"; };
+		EBFF92D51983DBFF001BFE63 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		EBFF92D71983DC07001BFE63 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EBFF92D91983DC11001BFE63 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EBFF92DB1983DC20001BFE63 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		EBFF92DD1983DC28001BFE63 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		EBFF92DF1983DC2F001BFE63 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EBFF92E21983E378001BFE63 /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
+		EBFF92E51983E378001BFE63 /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
+		EBFF92E81983E378001BFE63 /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
+		EBFF92EA1983E378001BFE63 /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
+		EBFF92EF1983E38F001BFE63 /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FYX.framework; sourceTree = "<group>"; };
+		EBFF92F11983E38F001BFE63 /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
+		EBFF92F51983F5E5001BFE63 /* UserContext.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserContext.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +110,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBFF92E01983DC2F001BFE63 /* Security.framework in Frameworks */,
+				EBFF92DE1983DC28001BFE63 /* MapKit.framework in Frameworks */,
+				EBFF92F31983E38F001BFE63 /* FYX.framework in Frameworks */,
+				EBFF92DC1983DC20001BFE63 /* libz.dylib in Frameworks */,
+				EBFF92ED1983E378001BFE63 /* ContextLocation.framework in Frameworks */,
+				EBFF92DA1983DC11001BFE63 /* CoreData.framework in Frameworks */,
+				EBFF92EC1983E378001BFE63 /* ContextCore.framework in Frameworks */,
+				EBFF92D81983DC07001BFE63 /* CoreLocation.framework in Frameworks */,
+				EBFF92D61983DBFF001BFE63 /* CoreBluetooth.framework in Frameworks */,
+				EBFF92F41983E38F001BFE63 /* NetworkServices.framework in Frameworks */,
 				EBFF92A31983DBC9001BFE63 /* CoreGraphics.framework in Frameworks */,
+				EBFF92EB1983E378001BFE63 /* Common.framework in Frameworks */,
 				EBFF92A51983DBC9001BFE63 /* UIKit.framework in Frameworks */,
 				EBFF92A11983DBC9001BFE63 /* Foundation.framework in Frameworks */,
 			);
@@ -79,6 +140,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB2D84161996E964005E4384 /* Room View */ = {
+			isa = PBXGroup;
+			children = (
+				EB10622E198D419100C2D084 /* RoomView.h */,
+				EB10622F198D419100C2D084 /* RoomView.m */,
+				EB106231198D41AE00C2D084 /* GBeaconView.h */,
+				EB106232198D41AE00C2D084 /* GBeaconView.m */,
+				EB106234198D41C300C2D084 /* MeView.h */,
+				EB106235198D41C300C2D084 /* MeView.m */,
+			);
+			name = "Room View";
+			sourceTree = "<group>";
+		};
+		EB2D84171996E976005E4384 /* Beacon Cell View */ = {
+			isa = PBXGroup;
+			children = (
+				EB2D84101996D679005E4384 /* RSSIGraphView.h */,
+				EB2D84111996D679005E4384 /* RSSIGraphView.m */,
+				EB2D84131996E842005E4384 /* GBeaconTableViewCell.h */,
+				EB2D84141996E842005E4384 /* GBeaconTableViewCell.m */,
+			);
+			name = "Beacon Cell View";
+			sourceTree = "<group>";
+		};
 		EBFF92941983DBC9001BFE63 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +186,17 @@
 		EBFF929F1983DBC9001BFE63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EBFF92EF1983E38F001BFE63 /* FYX.framework */,
+				EBFF92F01983E38F001BFE63 /* NetworkServices.embeddedframework */,
+				EBFF92E11983E378001BFE63 /* Common.embeddedframework */,
+				EBFF92E41983E378001BFE63 /* ContextCore.embeddedframework */,
+				EBFF92E71983E378001BFE63 /* ContextLocation.embeddedframework */,
+				EBFF92DF1983DC2F001BFE63 /* Security.framework */,
+				EBFF92DD1983DC28001BFE63 /* MapKit.framework */,
+				EBFF92DB1983DC20001BFE63 /* libz.dylib */,
+				EBFF92D91983DC11001BFE63 /* CoreData.framework */,
+				EBFF92D71983DC07001BFE63 /* CoreLocation.framework */,
+				EBFF92D51983DBFF001BFE63 /* CoreBluetooth.framework */,
 				EBFF92A01983DBC9001BFE63 /* Foundation.framework */,
 				EBFF92A21983DBC9001BFE63 /* CoreGraphics.framework */,
 				EBFF92A41983DBC9001BFE63 /* UIKit.framework */,
@@ -117,6 +213,14 @@
 				EBFF92B21983DBC9001BFE63 /* Main.storyboard */,
 				EBFF92B51983DBC9001BFE63 /* GimbalViewController.h */,
 				EBFF92B61983DBC9001BFE63 /* GimbalViewController.m */,
+				EB106228198D40DD00C2D084 /* GViewController.h */,
+				EB106229198D40DD00C2D084 /* GViewController.m */,
+				EB106237198D42A800C2D084 /* GBeaconManager.h */,
+				EB106238198D42A800C2D084 /* GBeaconManager.m */,
+				EB10622B198D414E00C2D084 /* GBeacon.h */,
+				EB10622C198D414E00C2D084 /* GBeacon.m */,
+				EB2D84171996E976005E4384 /* Beacon Cell View */,
+				EB2D84161996E964005E4384 /* Room View */,
 				EBFF92B81983DBC9001BFE63 /* Images.xcassets */,
 				EBFF92A71983DBC9001BFE63 /* Supporting Files */,
 			);
@@ -130,6 +234,7 @@
 				EBFF92A91983DBC9001BFE63 /* InfoPlist.strings */,
 				EBFF92AC1983DBC9001BFE63 /* main.m */,
 				EBFF92AE1983DBC9001BFE63 /* Gimbal-Prefix.pch */,
+				EBFF92F51983F5E5001BFE63 /* UserContext.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -150,6 +255,71 @@
 				EBFF92C81983DBC9001BFE63 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBFF92E11983E378001BFE63 /* Common.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				EBFF92E21983E378001BFE63 /* Common.framework */,
+				EBFF92E31983E378001BFE63 /* Resources */,
+			);
+			path = Common.embeddedframework;
+			sourceTree = "<group>";
+		};
+		EBFF92E31983E378001BFE63 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EBFF92E41983E378001BFE63 /* ContextCore.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				EBFF92E51983E378001BFE63 /* ContextCore.framework */,
+				EBFF92E61983E378001BFE63 /* Resources */,
+			);
+			path = ContextCore.embeddedframework;
+			sourceTree = "<group>";
+		};
+		EBFF92E61983E378001BFE63 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EBFF92E71983E378001BFE63 /* ContextLocation.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				EBFF92E81983E378001BFE63 /* ContextLocation.framework */,
+				EBFF92E91983E378001BFE63 /* Resources */,
+			);
+			path = ContextLocation.embeddedframework;
+			sourceTree = "<group>";
+		};
+		EBFF92E91983E378001BFE63 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EBFF92EA1983E378001BFE63 /* DataModels.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EBFF92F01983E38F001BFE63 /* NetworkServices.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				EBFF92F11983E38F001BFE63 /* NetworkServices.framework */,
+				EBFF92F21983E38F001BFE63 /* Resources */,
+			);
+			path = NetworkServices.embeddedframework;
+			sourceTree = "<group>";
+		};
+		EBFF92F21983E38F001BFE63 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +399,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBFF92F61983F5E5001BFE63 /* UserContext.plist in Resources */,
 				EBFF92B91983DBC9001BFE63 /* Images.xcassets in Resources */,
 				EBFF92AB1983DBC9001BFE63 /* InfoPlist.strings in Resources */,
 				EBFF92B41983DBC9001BFE63 /* Main.storyboard in Resources */,
+				EBFF92EE1983E378001BFE63 /* DataModels.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,8 +422,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB106236198D41C300C2D084 /* MeView.m in Sources */,
+				EB106233198D41AE00C2D084 /* GBeaconView.m in Sources */,
+				EB2D84151996E842005E4384 /* GBeaconTableViewCell.m in Sources */,
 				EBFF92B71983DBC9001BFE63 /* GimbalViewController.m in Sources */,
+				EB106230198D419100C2D084 /* RoomView.m in Sources */,
+				EB106239198D42A800C2D084 /* GBeaconManager.m in Sources */,
 				EBFF92B11983DBC9001BFE63 /* GimbalAppDelegate.m in Sources */,
+				EB10622A198D40DD00C2D084 /* GViewController.m in Sources */,
+				EB10622D198D414E00C2D084 /* GBeacon.m in Sources */,
+				EB2D84121996D679005E4384 /* RSSIGraphView.m in Sources */,
 				EBFF92AD1983DBC9001BFE63 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +557,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Common.embeddedframework",
+					"$(PROJECT_DIR)/ContextCore.embeddedframework",
+					"$(PROJECT_DIR)/ContextLocation.embeddedframework",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/NetworkServices.embeddedframework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gimbal/Gimbal-Prefix.pch";
 				INFOPLIST_FILE = "Gimbal/Gimbal-Info.plist";
@@ -390,6 +578,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Common.embeddedframework",
+					"$(PROJECT_DIR)/ContextCore.embeddedframework",
+					"$(PROJECT_DIR)/ContextLocation.embeddedframework",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/NetworkServices.embeddedframework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gimbal/Gimbal-Prefix.pch";
 				INFOPLIST_FILE = "Gimbal/Gimbal-Info.plist";
@@ -457,6 +653,7 @@
 				EBFF92D11983DBC9001BFE63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBFF92D21983DBC9001BFE63 /* Build configuration list for PBXNativeTarget "GimbalTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +662,7 @@
 				EBFF92D41983DBC9001BFE63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
