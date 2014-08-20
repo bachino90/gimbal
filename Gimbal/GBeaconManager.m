@@ -13,7 +13,7 @@
 #import <FYX/FYXTransmitter.h>
 #import <FYX/FYXiBeacon.h>
 
-
+// probando git hub
 @interface GBeaconManager () <FYXServiceDelegate, FYXVisitDelegate, FYXiBeaconVisitDelegate>
 @property (nonatomic) FYXVisitManager *visitManager;
 @property (nonatomic, strong, readwrite) NSMutableDictionary *beacons;
