@@ -1,21 +1,18 @@
 //
-//  GViewController.m
+//  GBeaconViewController.m
 //  Gimbal
 //
-//  Created by Emiliano Bivachi on 02/08/14.
+//  Created by Emiliano Bivachi on 20/08/14.
 //  Copyright (c) 2014 Emiliano Bivachi. All rights reserved.
 //
 
-#import "GViewController.h"
-#import "GBeaconManager.h"
+#import "GBeaconViewController.h"
 
-@interface GViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) GBeaconManager *beaconManager;
+@interface GBeaconViewController ()
+
 @end
 
-@implementation GViewController
+@implementation GBeaconViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,8 +27,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.beaconManager = [GBeaconManager sharedManager];
-    [self.beaconManager startScanning];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,15 +45,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.beaconManager.beacons.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
-}
-
-
 
 @end
