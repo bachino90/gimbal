@@ -20,7 +20,8 @@
 
 //PUBLIC PROPERTIES
 @property (nonatomic, readwrite) CGPoint location;
-@property (nonatomic, readwrite) CGFloat lastRSSI;
+@property (nonatomic, readwrite) NSInteger lastRSSI;
+@property (nonatomic, readwrite) CGFloat lastDistance;
 @property (nonatomic, readwrite) CGFloat timeToLastUpdate;
 @property (nonatomic, readwrite) NSDate *startTime;
 
@@ -35,9 +36,6 @@
 
 @implementation GBeacon
 
-#define NUMBER_OF_RECORDS 20
-#define RSSI_ONE_METER -77.0f
-
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -45,6 +43,9 @@
         self.historyRSSI = (int*) calloc (NUMBER_OF_RECORDS,sizeof(int));
         self.filteredRSSI = (int*) calloc (NUMBER_OF_RECORDS,sizeof(int));
         self.historyDistance = (double*) calloc (NUMBER_OF_RECORDS,sizeof(double));
+        self.updateIndex = 0;
+        self.lastRSSI = 0;
+        self.lastDistance = 0;
     }
     return self;
 }
@@ -60,12 +61,12 @@
     if (self) {
         self.startTime = visit.startTime;
         self.identifier = visit.transmitter.identifier;
-        if ([visit.transmitter.identifier isEqual:@""]) {
-            self.location = CGPointMake(0.0, 0.0);
-        } else if ([visit.transmitter.identifier isEqual:@"1"]) {
-            self.location = CGPointMake(0.0, 0.0);
-        } else if ([visit.transmitter.identifier isEqual:@"2"]) {
-            self.location = CGPointMake(0.0, 0.0);
+        if ([visit.transmitter.name isEqual:@"My First Beacon"]) {
+            self.location = CGPointMake(1.0, 0.5);
+        } else if ([visit.transmitter.name isEqual:@"My Second Beacon"]) {
+            self.location = CGPointMake(1.0, 1.5);
+        } else if ([visit.transmitter.name isEqual:@"My Third Beacon"]) {
+            self.location = CGPointMake(2.0, 0.5);
         }
     }
     return self;
@@ -74,11 +75,14 @@
 - (void)updateRSSI:(NSNumber *)rssi {
     self.historyRSSI[self.index] = [rssi intValue];
     self.filteredRSSI[self.index] = [rssi intValue];
+    self.lastRSSI = self.filteredRSSI[self.index];
     
-    double num = ((-[rssi doubleValue] - RSSI_ONE_METER)/(10.0*2.5));
+    double num = ((-[rssi doubleValue] + RSSI_ONE_METER)/(10.0*2.5));
     double distance = pow(10,num);
     self.historyDistance[self.index] = distance;
+    self.lastDistance = self.historyDistance[self.index];
     
+    self.updateIndex++;
     if (self.index > 0) {
         self.index--;
     } else {

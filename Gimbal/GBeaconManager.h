@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @class GBeaconManager;
+@class GBeacon;
 
 @protocol GBeaconManagerDelegate <NSObject>
+- (void)beaconManager:(GBeaconManager *)beaconManager hasFoundBeacon:(GBeacon *)beacon;
+- (void)beaconManager:(GBeaconManager *)beaconManager hasLostBeacon:(GBeacon *)beacon;
+- (void)beaconManager:(GBeaconManager *)beaconManager removeKVOFromIndex:(NSInteger)index;
 @end
 
 @interface GBeaconManager : NSObject
@@ -20,5 +24,6 @@
 
 + (instancetype)sharedManager;
 - (void)startScanning;
+- (GBeacon *)beaconAtIndex:(NSInteger)index;
 
 @end

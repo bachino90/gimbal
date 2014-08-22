@@ -13,4 +13,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #define KVO_KEY_PATH @"updateIndex"
+    #define NUMBER_OF_RECORDS 20
+    #define RSSI_ONE_METER -77.0f
 #endif

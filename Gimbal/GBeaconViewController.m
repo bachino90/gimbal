@@ -7,6 +7,7 @@
 //
 
 #import "GBeaconViewController.h"
+#import "GBeacon.h"
 
 @interface GBeaconViewController ()
 

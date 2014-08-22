@@ -17,7 +17,7 @@
 @interface GBeaconManager () <FYXServiceDelegate, FYXVisitDelegate, FYXiBeaconVisitDelegate>
 @property (nonatomic) FYXVisitManager *visitManager;
 @property (nonatomic, strong, readwrite) NSMutableDictionary *beacons;
-@property (nonatomic, strong) NSArray *beaconsID;
+@property (nonatomic, strong) NSMutableArray *beaconsID;
 @end
 
 @implementation GBeaconManager
@@ -35,6 +35,7 @@
     self = [super init];
     if (self) {
         self.beacons = [NSMutableDictionary dictionary];
+        self.beaconsID = [NSMutableArray array];
     }
     return self;
 }
@@ -47,6 +48,25 @@
     [self.visitManager start];
 }
 
+- (GBeacon *)beaconAtIndex:(NSInteger)index {
+    return self.beacons[self.beaconsID[index]];
+}
+
+- (void)addNewBeacon:(FYXVisit *)visit {
+    GBeacon *newBeacon = [[GBeacon alloc]initWithVisit:visit];
+    [self.beacons setObject:newBeacon forKey:visit.transmitter.identifier];
+    [self.beaconsID addObject:visit.transmitter.identifier];
+    [self.delegate beaconManager:self hasFoundBeacon:newBeacon];
+}
+
+- (void)removeBeaconWithID:(NSString *)identifier {
+    if ([self.beacons objectForKey:identifier]) {
+        [self.delegate beaconManager:self removeKVOFromIndex:[self.beaconsID indexOfObject:identifier]];
+        [self.beacons removeObjectForKey:identifier];
+        [self.beaconsID removeObject:identifier];
+        [self.delegate beaconManager:self hasLostBeacon:self.beacons[identifier]];
+    }
+}
 
 - (void)serviceStarted
 {
@@ -68,8 +88,7 @@
     
     //agregar beacon
     if ([self.beacons objectForKey:visit.transmitter.identifier]==nil) {
-        GBeacon *newBeacon = [[GBeacon alloc]initWithVisit:visit];
-        [self.beacons setObject:newBeacon forKey:visit.transmitter.identifier];
+        [self addNewBeacon:visit];
     }
 }
 
@@ -77,10 +96,12 @@
 {
     // this will be invoked when an authorized transmitter is sighted during an on-going visit
     NSLog(@"I received a sighting!!! %@, RSSI: %@", visit.transmitter.name, RSSI);
-    
+
     GBeacon *beacon = [self.beacons objectForKey:visit.transmitter.identifier];
     if (beacon) {
         [beacon updateRSSI:RSSI];
+    } else {
+        [self addNewBeacon:visit];
     }
 }
 
@@ -91,10 +112,7 @@
     NSLog(@"I was around the beacon for %f seconds", visit.dwellTime);
     
     //borrar beacon
-    if ([self.beacons objectForKey:visit.transmitter.identifier]) {
-        [self.beacons removeObjectForKey:visit.transmitter.identifier];
-    }
-
+    [self removeBeaconWithID:visit.transmitter.identifier];
 }
 
 

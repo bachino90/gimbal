@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class GBeacon;
+
 @interface RoomView : UIView
+
+@property (nonatomic, readonly) CGFloat scale;
+
+- (void)addBeacon:(GBeacon *)beacon;
+- (void)removeBeacon:(GBeacon *)beacon;
 
 @end

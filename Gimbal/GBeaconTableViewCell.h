@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GBeacon.h"
 
 @interface GBeaconTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) GBeacon *beacon;
 
 @end

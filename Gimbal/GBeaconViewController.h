@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GBeaconViewController : UIViewController
+@class GBeacon;
 
+@interface GBeaconViewController : UIViewController
+@property (nonatomic, weak) GBeacon *beacon;
 @end
