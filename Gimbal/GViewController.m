@@ -140,6 +140,7 @@
         GBeaconTableViewCell *cell = (GBeaconTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         [self removeObserver:cell forBeacon:beacon];
     }
+    [self.roomView removeObservers];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -151,6 +152,7 @@
         GBeaconTableViewCell *cell = (GBeaconTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         [beacon addObserver:cell forKeyPath:KVO_KEY_PATH options:NSKeyValueObservingOptionNew context:NULL];
     }
+    [self.roomView addObservers];
 }
 
 

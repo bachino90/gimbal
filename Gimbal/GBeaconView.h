@@ -12,6 +12,8 @@
 
 @interface GBeaconView : UIView
 
+@property (nonatomic, strong) GBeacon *beacon;
+
 - (instancetype)initWithBeacon:(GBeacon *)beacon;
 
 @end

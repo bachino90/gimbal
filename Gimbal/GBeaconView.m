@@ -11,7 +11,6 @@
 #import "GBeacon.h"
 
 @interface GBeaconView ()
-@property (nonatomic, strong) GBeacon *beacon;
 @end
 
 #define LITTLE_CIRCLE_WIDTH 5.0f

@@ -45,6 +45,20 @@
     [self.beaconsViews removeObjectForKey:beacon.identifier];
 }
 
+- (void)addObservers {
+    for (GBeaconView *beaconView in self.beaconsViews) {
+        GBeacon *beacon = beaconView.beacon;
+        [beacon addObserver:beaconView forKeyPath:KVO_KEY_PATH options:NSKeyValueObservingOptionNew context:NULL];
+    }
+}
+
+- (void)removeObservers {
+    for (GBeaconView *beaconView in self.beaconsViews) {
+        GBeacon *beacon = beaconView.beacon;
+        [beacon removeObserver:beaconView forKeyPath:KVO_KEY_PATH];
+    }
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
