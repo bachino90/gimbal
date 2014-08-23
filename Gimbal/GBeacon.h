@@ -13,6 +13,11 @@
 
 @interface GBeacon : NSObject
 
+@property (nonatomic, readonly) float *historyRSSI;
+@property (nonatomic, readonly) float *filteredRSSI;
+@property (nonatomic, readonly) float *historyDistance;
+@property (nonatomic, readonly) int index;
+
 @property (nonatomic, readonly) CGPoint location;
 @property (nonatomic, readonly) NSInteger lastRSSI;
 @property (nonatomic, readonly) CGFloat lastDistance;

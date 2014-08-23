@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class GBeacon;
+
 @interface BeaconGraphView : UIView
+
+@property (nonatomic, weak) GBeacon *beacon;
 
 - (instancetype)initWithHeight:(CGFloat)height;
 

@@ -57,6 +57,7 @@
     self.name = beacon.identifier;
     self.rssi = beacon.lastRSSI;
     self.distance = beacon.lastDistance;
+    self.graphView.beacon = beacon;
 }
 
 - (void)setName:(NSString *)name {
@@ -76,8 +77,6 @@
 
 - (void)setHistory:(int *)history {
     _history = history;
-    //self.graphView.history = history;
-    //self.graphView.color = color;
 }
 
 @end

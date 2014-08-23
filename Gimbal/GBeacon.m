@@ -10,10 +10,10 @@
 
 @interface GBeacon ()
 //PRIVATE PROPERTIES
-@property (nonatomic) NSUInteger index;
-@property (nonatomic) int *historyRSSI;
-@property (nonatomic) int *filteredRSSI;
-@property (nonatomic) double *historyDistance;
+@property (nonatomic, readwrite) int index;
+@property (nonatomic, readwrite) float *historyRSSI;
+@property (nonatomic, readwrite) float *filteredRSSI;
+@property (nonatomic, readwrite) float *historyDistance;
 
 @property (nonatomic, strong) NSMutableArray *history;
 @property (nonatomic, strong) NSMutableArray *filtered;
@@ -39,10 +39,10 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.index = NUMBER_OF_RECORDS-1;
-        self.historyRSSI = (int*) calloc (NUMBER_OF_RECORDS,sizeof(int));
-        self.filteredRSSI = (int*) calloc (NUMBER_OF_RECORDS,sizeof(int));
-        self.historyDistance = (double*) calloc (NUMBER_OF_RECORDS,sizeof(double));
+        self.index = 0;
+        self.historyRSSI = (float*) calloc (NUMBER_OF_RECORDS,sizeof(float));
+        self.filteredRSSI = (float*) calloc (NUMBER_OF_RECORDS,sizeof(float));
+        self.historyDistance = (float*) calloc (NUMBER_OF_RECORDS,sizeof(float));
         self.updateIndex = 0;
         self.lastRSSI = 0;
         self.lastDistance = 0;
@@ -73,20 +73,20 @@
 }
 
 - (void)updateRSSI:(NSNumber *)rssi {
-    self.historyRSSI[self.index] = [rssi intValue];
-    self.filteredRSSI[self.index] = [rssi intValue];
+    self.historyRSSI[self.index] = [rssi floatValue];
+    self.filteredRSSI[self.index] = [rssi floatValue];
     self.lastRSSI = self.filteredRSSI[self.index];
     
-    double num = ((-[rssi doubleValue] + RSSI_ONE_METER)/(10.0*2.5));
-    double distance = pow(10,num);
+    float num = ((-[rssi floatValue] + RSSI_ONE_METER)/(10.0*2.5));
+    float distance = pow(10,num);
     self.historyDistance[self.index] = distance;
     self.lastDistance = self.historyDistance[self.index];
     
     self.updateIndex++;
-    if (self.index > 0) {
-        self.index--;
+    if (self.index < NUMBER_OF_RECORDS-1) {
+        self.index++;
     } else {
-        self.index = NUMBER_OF_RECORDS-1;
+        self.index = 0;
     }
 }
 
