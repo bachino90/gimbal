@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0E5C92D819A5433A0035363F /* GBeaconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5C92D719A5433A0035363F /* GBeaconViewController.m */; };
 		0E8EF24419A78DF200EF21F5 /* BeaconGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EF24319A78DF200EF21F5 /* BeaconGraphView.m */; };
+		0EC7FDA519AB7FCF00B999F4 /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC7FDA419AB7FCF00B999F4 /* GridView.m */; };
+		0EC7FDA819AB9EDD00B999F4 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC7FDA719AB9EDD00B999F4 /* GraphView.m */; };
+		0EC7FDAB19AB9FEF00B999F4 /* GraphGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC7FDAA19AB9FEF00B999F4 /* GraphGridView.m */; };
+		0EC7FDAE19ABA01300B999F4 /* GraphAxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC7FDAD19ABA01300B999F4 /* GraphAxisView.m */; };
 		EB10622A198D40DD00C2D084 /* GViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB106229198D40DD00C2D084 /* GViewController.m */; };
 		EB10622D198D414E00C2D084 /* GBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10622C198D414E00C2D084 /* GBeacon.m */; };
 		EB106230198D419100C2D084 /* RoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10622F198D419100C2D084 /* RoomView.m */; };
@@ -61,6 +65,14 @@
 		0E5C92D719A5433A0035363F /* GBeaconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBeaconViewController.m; sourceTree = "<group>"; };
 		0E8EF24219A78DF200EF21F5 /* BeaconGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconGraphView.h; sourceTree = "<group>"; };
 		0E8EF24319A78DF200EF21F5 /* BeaconGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconGraphView.m; sourceTree = "<group>"; };
+		0EC7FDA319AB7FCF00B999F4 /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
+		0EC7FDA419AB7FCF00B999F4 /* GridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridView.m; sourceTree = "<group>"; };
+		0EC7FDA619AB9EDD00B999F4 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		0EC7FDA719AB9EDD00B999F4 /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
+		0EC7FDA919AB9FEF00B999F4 /* GraphGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphGridView.h; sourceTree = "<group>"; };
+		0EC7FDAA19AB9FEF00B999F4 /* GraphGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphGridView.m; sourceTree = "<group>"; };
+		0EC7FDAC19ABA01300B999F4 /* GraphAxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphAxisView.h; sourceTree = "<group>"; };
+		0EC7FDAD19ABA01300B999F4 /* GraphAxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphAxisView.m; sourceTree = "<group>"; };
 		EB106228198D40DD00C2D084 /* GViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GViewController.h; sourceTree = "<group>"; };
 		EB106229198D40DD00C2D084 /* GViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GViewController.m; sourceTree = "<group>"; };
 		EB10622B198D414E00C2D084 /* GBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBeacon.h; sourceTree = "<group>"; };
@@ -151,6 +163,8 @@
 			children = (
 				EB10622E198D419100C2D084 /* RoomView.h */,
 				EB10622F198D419100C2D084 /* RoomView.m */,
+				0EC7FDA319AB7FCF00B999F4 /* GridView.h */,
+				0EC7FDA419AB7FCF00B999F4 /* GridView.m */,
 				EB106231198D41AE00C2D084 /* GBeaconView.h */,
 				EB106232198D41AE00C2D084 /* GBeaconView.m */,
 				EB106234198D41C300C2D084 /* MeView.h */,
@@ -166,6 +180,12 @@
 				EB2D84111996D679005E4384 /* RSSIGraphView.m */,
 				0E8EF24219A78DF200EF21F5 /* BeaconGraphView.h */,
 				0E8EF24319A78DF200EF21F5 /* BeaconGraphView.m */,
+				0EC7FDA619AB9EDD00B999F4 /* GraphView.h */,
+				0EC7FDA719AB9EDD00B999F4 /* GraphView.m */,
+				0EC7FDA919AB9FEF00B999F4 /* GraphGridView.h */,
+				0EC7FDAA19AB9FEF00B999F4 /* GraphGridView.m */,
+				0EC7FDAC19ABA01300B999F4 /* GraphAxisView.h */,
+				0EC7FDAD19ABA01300B999F4 /* GraphAxisView.m */,
 				EB2D84131996E842005E4384 /* GBeaconTableViewCell.h */,
 				EB2D84141996E842005E4384 /* GBeaconTableViewCell.m */,
 			);
@@ -434,15 +454,19 @@
 			files = (
 				EB106236198D41C300C2D084 /* MeView.m in Sources */,
 				0E8EF24419A78DF200EF21F5 /* BeaconGraphView.m in Sources */,
+				0EC7FDA519AB7FCF00B999F4 /* GridView.m in Sources */,
 				EB106233198D41AE00C2D084 /* GBeaconView.m in Sources */,
 				EB2D84151996E842005E4384 /* GBeaconTableViewCell.m in Sources */,
 				EBFF92B71983DBC9001BFE63 /* GimbalViewController.m in Sources */,
+				0EC7FDA819AB9EDD00B999F4 /* GraphView.m in Sources */,
 				0E5C92D819A5433A0035363F /* GBeaconViewController.m in Sources */,
+				0EC7FDAE19ABA01300B999F4 /* GraphAxisView.m in Sources */,
 				EB106230198D419100C2D084 /* RoomView.m in Sources */,
 				EB106239198D42A800C2D084 /* GBeaconManager.m in Sources */,
 				EBFF92B11983DBC9001BFE63 /* GimbalAppDelegate.m in Sources */,
 				EB10622A198D40DD00C2D084 /* GViewController.m in Sources */,
 				EB10622D198D414E00C2D084 /* GBeacon.m in Sources */,
+				0EC7FDAB19AB9FEF00B999F4 /* GraphGridView.m in Sources */,
 				EB2D84121996D679005E4384 /* RSSIGraphView.m in Sources */,
 				EBFF92AD1983DBC9001BFE63 /* main.m in Sources */,
 			);

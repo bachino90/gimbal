@@ -118,7 +118,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsX-we-SxM" customClass="BeaconGraphView">
                                 <rect key="frame" x="0.0" y="373" width="320" height="195"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="0.47121163440000002" blue="0.18110808810000001" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="lNf-nU-c65"/>
                                     <constraint firstAttribute="height" constant="195" id="ubO-Hf-Ivc"/>
@@ -162,7 +162,7 @@
                             <constraint firstAttribute="trailing" secondItem="KsX-we-SxM" secondAttribute="trailing" id="Rfm-Xk-DKv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ruH-oQ-TT7"/>
+                    <navigationItem key="navigationItem" id="PJH-Ke-eGq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vD3-Uf-xjZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -200,12 +200,13 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="0.4383413654701922" blue="0.1329642616015525" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="0.47121163440000002" blue="0.18110808810000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="42h-bL-Mr1"/>
                                     <constraint firstAttribute="height" constant="287" id="gDN-sh-e4M"/>
                                 </constraints>
                             </scrollView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Sgb-KS-M9T">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="89" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Sgb-KS-M9T">
                                 <rect key="frame" x="0.0" y="287" width="320" height="281"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -213,20 +214,20 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="281" id="A3A-ec-wTx"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GBeaconTableViewCell" rowHeight="90" id="ZMA-3x-aYJ" customClass="GBeaconTableViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="90"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GBeaconTableViewCell" rowHeight="100" id="ZMA-3x-aYJ" customClass="GBeaconTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZMA-3x-aYJ" id="L3n-Oj-uXz">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sqs-Up-TPd" customClass="BeaconGraphView">
-                                                    <rect key="frame" x="0.0" y="20" width="320" height="69"/>
+                                                    <rect key="frame" x="0.0" y="30" width="320" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.47121163440000002" blue="0.18110808810000001" alpha="0.75" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My First Beacon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmN-wN-Uiv">
-                                                    <rect key="frame" x="20" y="9" width="143" height="21"/>
+                                                    <rect key="frame" x="20" y="9" width="201" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -251,7 +252,7 @@
                                             <outlet property="graphView" destination="sqs-Up-TPd" id="MM8-bT-oS9"/>
                                             <outlet property="nameLabel" destination="rmN-wN-Uiv" id="GpS-BB-KZL"/>
                                             <outlet property="rssiLabel" destination="cSM-kr-CpW" id="NL3-9u-fDh"/>
-                                            <segue destination="ebQ-4b-Fr0" kind="push" id="TnY-J7-xlK"/>
+                                            <segue destination="ebQ-4b-Fr0" kind="push" identifier="PushBeaconSegue" id="TnY-J7-xlK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -40,7 +40,11 @@
         CGFloat distance = 2 * ((GBeacon *)object).lastDistance;
         CGFloat scale = ((RoomView *)self.superview).scale;
         CGPoint lastCenter = self.center;
-        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.x, distance * scale, distance * scale);
+        distance *= scale;
+        if (distance < LITTLE_CIRCLE_WIDTH+2) {
+            distance = LITTLE_CIRCLE_WIDTH+2;
+        }
+        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.x, distance, distance);
         self.center = lastCenter;
         [self setNeedsDisplay];
     }

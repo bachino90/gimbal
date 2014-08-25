@@ -72,7 +72,7 @@
 
 - (void)setDistance:(CGFloat)distance {
     _distance = distance;
-    self.distanceLabel.text = [NSString stringWithFormat:@"%.1fm",distance];
+    self.distanceLabel.text = [NSString stringWithFormat:@"%.2fm",distance];
 }
 
 - (void)setHistory:(int *)history {

@@ -7,6 +7,7 @@
 //
 
 #import "GViewController.h"
+#import "GBeaconViewController.h"
 #import "GBeaconTableViewCell.h"
 #import "GBeaconManager.h"
 #import "RoomView.h"
@@ -18,6 +19,13 @@
 
 @property (nonatomic, strong) NSMutableArray *visibleCells;
 @property (nonatomic, strong) RoomView *roomView;
+
+@property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
+
+@property (nonatomic) CGRect normalScrollViewFrame;
+@property (nonatomic) CGRect fullScrollViewFrame;
+@property (nonatomic) CGRect normalTableViewFrame;
+@property (nonatomic) CGRect fullTableViewFrame;
 @end
 
 @implementation GViewController
@@ -41,9 +49,22 @@
     
     self.visibleCells = [NSMutableArray array];
     
-    self.roomView = [[RoomView alloc]initWithFrame:self.scrollView.frame];
+    self.roomView = [[RoomView alloc]initWithFrame:self.scrollView.bounds];
     self.scrollView.contentSize = self.scrollView.frame.size;
     [self.scrollView addSubview:self.roomView];
+    
+    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showFullMap)];
+    self.tapGestureRecognizer.numberOfTapsRequired = 1;
+    self.tapGestureRecognizer.numberOfTouchesRequired = 1;
+    [self.scrollView addGestureRecognizer:self.tapGestureRecognizer];
+    self.navigationItem.leftBarButtonItem = nil;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    self.normalScrollViewFrame = self.scrollView.frame;
+    self.normalTableViewFrame = self.tableView.frame;
+    self.fullScrollViewFrame = CGRectMake(self.scrollView.frame.origin.x, self.scrollView.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+    self.fullTableViewFrame = CGRectMake(self.tableView.frame.origin.x, self.view.frame.size.height, self.tableView.frame.size.width, self.tableView.frame.size.height);
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,6 +83,44 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"PushBeaconSegue"]) {
+        GBeaconViewController *bvc = (GBeaconViewController *)segue.destinationViewController;
+        bvc.beacon = ((GBeaconTableViewCell *)sender).beacon;
+    }
+}
+
+- (void)backToNormalView {
+    [self.scrollView addGestureRecognizer:self.tapGestureRecognizer];
+    self.navigationItem.leftBarButtonItem = nil;
+    [UIView animateWithDuration:0.1
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.scrollView.frame = self.normalScrollViewFrame;
+                         self.tableView.frame = self.normalTableViewFrame;
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
+}
+
+- (void)showFullMap {
+    [self.scrollView removeGestureRecognizer:self.tapGestureRecognizer];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(backToNormalView)];
+    [UIView animateWithDuration:0.1
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.scrollView.frame = self.fullScrollViewFrame;
+                         self.scrollView.contentSize = self.scrollView.frame.size;
+                         self.tableView.frame = self.fullTableViewFrame;
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
+}
 
 - (void)removeObserver:(UITableViewCell *)cell forBeacon:(GBeacon *)beacon {
     @try {

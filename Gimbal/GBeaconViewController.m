@@ -36,6 +36,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setBeacon:(GBeacon *)beacon {
+    _beacon = beacon;
+}
+
 /*
 #pragma mark - Navigation
 

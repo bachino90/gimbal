@@ -10,10 +10,15 @@
 
 @class GBeacon;
 
+typedef NS_ENUM(NSInteger, GraphType) {
+    GraphTypeRSSI,
+    GraphTypeDistance,
+    GraphTypeTemperature
+};
+
 @interface BeaconGraphView : UIView
 
 @property (nonatomic, weak) GBeacon *beacon;
-
-- (instancetype)initWithHeight:(CGFloat)height;
+@property (nonatomic) GraphType graphType;
 
 @end
