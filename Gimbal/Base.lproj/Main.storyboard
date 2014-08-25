@@ -205,6 +205,9 @@
                                     <constraint firstAttribute="width" constant="320" id="42h-bL-Mr1"/>
                                     <constraint firstAttribute="height" constant="287" id="gDN-sh-e4M"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="xhX-IN-Q1z" id="4Ca-vC-lzX"/>
+                                </connections>
                             </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="89" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Sgb-KS-M9T">
                                 <rect key="frame" x="0.0" y="287" width="320" height="281"/>

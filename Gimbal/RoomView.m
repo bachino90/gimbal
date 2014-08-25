@@ -17,9 +17,12 @@
 @property (nonatomic, strong) GridView *gridView;
 @property (nonatomic, strong) MeView *meView;
 @property (nonatomic, readwrite) CGFloat scale;
+@property (nonatomic) CGFloat zoomScale;
 @end
 
 @implementation RoomView
+
+#define DEFAULT_SCALE 100.0f
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -27,12 +30,30 @@
     if (self) {
         // Initialization code
         self.beaconsViews = [NSMutableDictionary dictionary];
-        self.scale = 100.0f;
+        self.scale = DEFAULT_SCALE;
         self.gridView = [[GridView alloc]initWithFrame:self.frame];
         self.gridView.scale = self.scale;
         [self addSubview:self.gridView];
     }
     return self;
+}
+
+- (void)setZoomScale:(CGFloat)zoomScale {
+    _zoomScale = zoomScale;
+    
+}
+
+- (void)setScale:(CGFloat)scale {
+    _scale = scale;
+}
+
+- (void)scaleView:(CGFloat)scale {
+    self.zoomScale = scale;
+    self.scale = _zoomScale * DEFAULT_SCALE;
+    
+    self.gridView.frame = CGRectMake(self.gridView.frame.origin.x, self.gridView.frame.origin.y, self.gridView.frame.size.width*self.scale, self.gridView.frame.size.height*self.scale);
+    self.gridView.scale = self.scale;
+    [self setNeedsDisplay];
 }
 
 - (void)addBeacon:(GBeacon *)beacon {

@@ -14,6 +14,8 @@
 
 @property (nonatomic, readonly) CGFloat scale;
 
+- (void)scaleView:(CGFloat)scale;
+
 - (void)addBeacon:(GBeacon *)beacon;
 - (void)removeBeacon:(GBeacon *)beacon;
 

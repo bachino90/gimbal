@@ -32,8 +32,8 @@
 {
     // Drawing code
     float scale = self.scale;
-    float width = self.frame.size.width;
-    float height = self.frame.size.height;
+    float width = self.bounds.size.width;
+    float height = self.bounds.size.height;
     float max = MAX(width, height);
     int numberOfRules = floorf(max/scale) + 1;
     UIColor *grayColor = [UIColor colorWithRed:(200/255.0) green:(200/255.0) blue:(200/255.0) alpha:0.95];//[UIColor lightGrayColor];

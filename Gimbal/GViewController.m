@@ -12,7 +12,7 @@
 #import "GBeaconManager.h"
 #import "RoomView.h"
 
-@interface GViewController () <UITableViewDataSource, UITableViewDelegate, GBeaconManagerDelegate>
+@interface GViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate, GBeaconManagerDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) GBeaconManager *beaconManager;
@@ -51,6 +51,8 @@
     
     self.roomView = [[RoomView alloc]initWithFrame:self.scrollView.bounds];
     self.scrollView.contentSize = self.scrollView.frame.size;
+    self.scrollView.minimumZoomScale = 1.0;
+    self.scrollView.maximumZoomScale = 3.0;
     [self.scrollView addSubview:self.roomView];
     
     self.tapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showFullMap)];
@@ -129,6 +131,19 @@
     }
     @catch (NSException * __unused exception) {
     }
+}
+
+#pragma mark UIScrollView Delegate
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return self.roomView;
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale {
+    NSLog(@"%@",view);
+    NSLog(@"%@",scrollView);
+    NSLog(@"%g",scale);
+    [self.roomView scaleView:scale];
 }
 
 #pragma mark GBeaconManager Delegate
