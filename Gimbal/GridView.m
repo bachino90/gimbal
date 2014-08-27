@@ -68,5 +68,19 @@
     }
 }
 
+/// Called by our CALayer when it wants us to draw (in compliance with the CALayerDelegate protocol).
+- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)context
+{
+    UIGraphicsPushContext(context);
+    [self internalDrawWithRect:self.bounds];
+    UIGraphicsPopContext();
+}
+
+/// Internal drawing method; naming's up to you.
+- (void)internalDrawWithRect:(CGRect)rect
+{
+    // @fillin: draw draw draw
+}
+
 
 @end

@@ -36,7 +36,7 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
-    UIColor *grayColor = [UIColor colorWithRed:(200/255.0) green:(200/255.0) blue:(200/255.0) alpha:0.95];
+    UIColor *grayColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:0.5];
     float height = self.frame.size.height;
     float width = self.frame.size.width;
     int numberOfGaps = floorf(height/self.deltaLine);

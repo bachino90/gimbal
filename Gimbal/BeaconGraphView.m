@@ -38,10 +38,10 @@
     [self setUpView];
 }
 
-#define GRID_X_MARGIN 35.0
+#define GRID_X_MARGIN 0.0
 
 - (void)setUpView {
-    self.backgroundColor = [UIColor whiteColor];
+    //self.backgroundColor = [UIColor whiteColor];
     self.graphType = GraphTypeRSSI;
     self.gridView = [[GraphGridView alloc]initWithFrame:CGRectMake(GRID_X_MARGIN, 0.0, self.frame.size.width-GRID_X_MARGIN, self.frame.size.height)];
     [self addSubview:self.gridView];

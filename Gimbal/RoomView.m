@@ -12,12 +12,13 @@
 #import "MeView.h"
 #import "GBeacon.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @interface RoomView ()
 @property (nonatomic, strong) NSMutableDictionary *beaconsViews;
 @property (nonatomic, strong) GridView *gridView;
 @property (nonatomic, strong) MeView *meView;
 @property (nonatomic, readwrite) CGFloat scale;
-@property (nonatomic) CGFloat zoomScale;
 @end
 
 @implementation RoomView
@@ -29,10 +30,15 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        CATiledLayer *tempTiledLayer = (CATiledLayer*)self.layer;
+        tempTiledLayer.levelsOfDetail = 5;
+        tempTiledLayer.levelsOfDetailBias = 2;
+        self.opaque=NO;
+        
         self.beaconsViews = [NSMutableDictionary dictionary];
         self.scale = DEFAULT_SCALE;
-        self.gridView = [[GridView alloc]initWithFrame:self.frame];
-        self.gridView.scale = self.scale;
+        //self.gridView = [[GridView alloc]initWithFrame:self.frame];
+        //self.gridView.scale = self.scale;
         [self addSubview:self.gridView];
     }
     return self;
@@ -40,20 +46,13 @@
 
 - (void)setZoomScale:(CGFloat)zoomScale {
     _zoomScale = zoomScale;
-    
+    self.scale = _zoomScale * DEFAULT_SCALE;
 }
 
 - (void)setScale:(CGFloat)scale {
     _scale = scale;
-}
-
-- (void)scaleView:(CGFloat)scale {
-    self.zoomScale = scale;
-    self.scale = _zoomScale * DEFAULT_SCALE;
-    
-    self.gridView.frame = CGRectMake(self.gridView.frame.origin.x, self.gridView.frame.origin.y, self.gridView.frame.size.width*self.scale, self.gridView.frame.size.height*self.scale);
-    self.gridView.scale = self.scale;
-    [self setNeedsDisplay];
+    //self.gridView = [[GridView alloc]initWithFrame:self.frame];
+    //self.gridView.scale = scale;
 }
 
 - (void)addBeacon:(GBeacon *)beacon {
@@ -87,13 +86,70 @@
     }
 }
 
-/*
+// Set the UIView layer to CATiledLayer
++(Class)layerClass
+{
+    return [CATiledLayer class];
+}
+
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
 }
-*/
+
+-(void)drawLayer:(CALayer*)layer inContext:(CGContextRef)context
+{
+    // The context is appropriately scaled and translated such that you can draw to this context
+    // as if you were drawing to the entire layer and the correct content will be rendered.
+    // We assume the current CTM will be a non-rotated uniformly scaled
+    
+    // affine transform, which implies that
+    // a == d and b == c == 0
+    // CGFloat scale = CGContextGetCTM(context).a;
+    // While not used here, it may be useful in other situations.
+    
+    // The clip bounding box indicates the area of the context that
+    // is being requested for rendering. While not used here
+    // your app may require it to do scaling in other
+    // situations.
+    // CGRect rect = CGContextGetClipBoundingBox(context);
+    
+    // Set and draw the background color of the entire layer
+    // The other option is to set the layer as opaque=NO;
+    // eliminate the following two lines of code
+    // and set the scroll view background color
+    CGContextSetRGBFillColor(context, (255/255.0),(131/255.0),(58/255.0),0.15);
+    CGContextFillRect(context,self.bounds);
+    
+    //Constants
+    NSLog(@"Context scale %f",CGContextGetCTM(context).a);
+    NSLog(@"Room scale %f",self.scale);
+    float scale = self.scale;
+    float width = self.bounds.size.width;
+    float height = self.bounds.size.height;
+    float max = MAX(width, height);
+    int numberOfRules = floorf(max/scale) + 1;
+    float delta = 0;
+    
+    // draw a simple plus sign
+    CGContextSetRGBStrokeColor(context, 0.8, 0.8, 0.8, 0.95);
+    CGContextSetLineWidth(context, 1.0);
+    CGContextBeginPath(context);
+    for (int i=0; i<=numberOfRules; i++) {
+        CGContextMoveToPoint(context,delta,0.0);
+        CGContextAddLineToPoint(context,delta,height);
+        
+        CGContextMoveToPoint(context,0.0,delta);
+        CGContextAddLineToPoint(context,width,delta);
+        
+        delta += scale;
+    }
+    CGContextClosePath(context);
+    CGContextStrokePath(context);
+    CGContextFillPath(context);
+}
 
 @end
