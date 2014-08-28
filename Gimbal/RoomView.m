@@ -16,7 +16,6 @@
 
 @interface RoomView ()
 @property (nonatomic, strong) NSMutableDictionary *beaconsViews;
-@property (nonatomic, strong) GridView *gridView;
 @property (nonatomic, strong) MeView *meView;
 @property (nonatomic, readwrite) CGFloat scale;
 @end
@@ -32,14 +31,11 @@
         // Initialization code
         CATiledLayer *tempTiledLayer = (CATiledLayer*)self.layer;
         tempTiledLayer.levelsOfDetail = 5;
-        tempTiledLayer.levelsOfDetailBias = 2;
+        tempTiledLayer.levelsOfDetailBias = 4;
         self.opaque=NO;
         
         self.beaconsViews = [NSMutableDictionary dictionary];
         self.scale = DEFAULT_SCALE;
-        //self.gridView = [[GridView alloc]initWithFrame:self.frame];
-        //self.gridView.scale = self.scale;
-        [self addSubview:self.gridView];
     }
     return self;
 }
@@ -51,8 +47,7 @@
 
 - (void)setScale:(CGFloat)scale {
     _scale = scale;
-    //self.gridView = [[GridView alloc]initWithFrame:self.frame];
-    //self.gridView.scale = scale;
+    [self setNeedsLayout];
 }
 
 - (void)addBeacon:(GBeacon *)beacon {
@@ -97,7 +92,6 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
 }
 
 -(void)drawLayer:(CALayer*)layer inContext:(CGContextRef)context
@@ -127,7 +121,14 @@
     //Constants
     NSLog(@"Context scale %f",CGContextGetCTM(context).a);
     NSLog(@"Room scale %f",self.scale);
-    float scale = self.scale;
+    NSLog(@"width: %f | height: %f",self.bounds.size.width, self.bounds.size.height);
+    
+    //self.scale;
+    float scale = DEFAULT_SCALE/2.0;
+
+    //if (self.scale > (DEFAULT_SCALE*1.3)) {
+    //    scale = DEFAULT_SCALE/2.0;
+    //}
     float width = self.bounds.size.width;
     float height = self.bounds.size.height;
     float max = MAX(width, height);
@@ -135,8 +136,8 @@
     float delta = 0;
     
     // draw a simple plus sign
-    CGContextSetRGBStrokeColor(context, 0.8, 0.8, 0.8, 0.95);
-    CGContextSetLineWidth(context, 1.0);
+    CGContextSetRGBStrokeColor(context, 0.8, 0.8, 0.8, 0.8);
+    CGContextSetLineWidth(context, CGContextGetCTM(context).a/CGContextGetCTM(context).a);
     CGContextBeginPath(context);
     for (int i=0; i<=numberOfRules; i++) {
         CGContextMoveToPoint(context,delta,0.0);

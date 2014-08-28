@@ -124,10 +124,13 @@
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
                          self.scrollView.frame = self.normalScrollViewFrame;
+                         self.scrollView.contentSize = self.scrollView.frame.size;
+                         self.roomView.frame = self.scrollView.frame;
+                         
                          self.tableView.frame = self.normalTableViewFrame;
                      }
                      completion:^(BOOL finished) {
-                         
+                         [self.roomView setNeedsDisplay];
                      }];
 }
 
@@ -140,10 +143,12 @@
                      animations:^{
                          self.scrollView.frame = self.fullScrollViewFrame;
                          self.scrollView.contentSize = self.scrollView.frame.size;
+                         self.roomView.frame = self.scrollView.frame;
+                         
                          self.tableView.frame = self.fullTableViewFrame;
                      }
                      completion:^(BOOL finished) {
-                         
+                         [self.roomView setNeedsDisplay];
                      }];
 }
 

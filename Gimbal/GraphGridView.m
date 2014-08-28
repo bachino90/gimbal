@@ -36,7 +36,6 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
-    UIColor *grayColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:0.5];
     float height = self.frame.size.height;
     float width = self.frame.size.width;
     int numberOfGaps = floorf(height/self.deltaLine);
@@ -44,20 +43,24 @@
     float margin = (height-heightOfGaps)/2.0f;
     
     float y = margin;
-    CGPoint initPoint = CGPointMake(0.0, y);
-    CGPoint finishPoint = CGPointMake(width, y);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 0.5);
+    //CGContextSetLineWidth(context,1);
+    CGFloat dotRadius = 2.0;
+    CGFloat lengths[2];
+    lengths[0] = 0;
+    lengths[1] = dotRadius * 2;
+    CGContextSetLineCap(context, kCGLineCapRound);
+    CGContextSetLineWidth(context, dotRadius);
+    CGContextSetLineDash(context, 0.0f, lengths, 2);
+    CGContextBeginPath(context);
     for (int i=0; i<=numberOfGaps; i++) {
-        UIBezierPath *bezierPath = [UIBezierPath bezierPath];
-        [bezierPath moveToPoint:initPoint];
-        [bezierPath addLineToPoint:finishPoint];
-        [grayColor setStroke];
-        bezierPath.lineWidth = 1;
-        [bezierPath stroke];
-        
+        CGContextMoveToPoint(context,0.0,y);
+        CGContextAddLineToPoint(context,width+2.0,y);
         y+=self.deltaLine;
-        initPoint.y = y;
-        finishPoint.y = y;
     }
+    CGContextClosePath(context);
+    CGContextStrokePath(context);
 }
 
 

@@ -53,6 +53,7 @@
         self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.x, distance, distance);
         self.center = lastCenter;
         [self setNeedsDisplay];
+        [self setNeedsDisplay];
     }
 }
 
@@ -60,30 +61,6 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    /*
-    UIColor *color = [UIColor blueColor];
-    UIColor *alphaColor = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:0.4];
-    
-    CGFloat centerX = (self.frame.size.width / 2.0) - (self.frame.size.width/2.0);
-    CGFloat centerY = centerX;
-    
-    UIBezierPath *bigCircle = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(1.0, 1.0, self.frame.size.width-2.0, self.frame.size.width-2.0)];
-    [alphaColor setFill];
-    [bigCircle fill];
-    [color setStroke];
-    bigCircle.lineWidth = 2;
-    [bigCircle stroke];
-    
-    centerX = (self.frame.size.width / 2.0) - (LITTLE_CIRCLE_WIDTH/2.0);
-    centerY = centerX;
-    
-    UIBezierPath *littleCircle = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(centerX, centerY, LITTLE_CIRCLE_WIDTH, LITTLE_CIRCLE_WIDTH)];
-    [color setFill];
-    [littleCircle fill];
-    [color setStroke];
-    littleCircle.lineWidth = 2;
-    [littleCircle stroke];
-     */
 }
 
 // Set the UIView layer to CATiledLayer
@@ -120,27 +97,24 @@
     CGFloat centerY = centerX;
     
     // draw a big circle
-    CGContextBeginPath(context);
     CGContextSetLineWidth(context,2);
     CGContextSetRGBFillColor(context,0.0,0.0,1.0,0.4);
     CGContextSetRGBStrokeColor(context,0.0,0.0,1.0,1.0);
     CGFloat radius = (self.bounds.size.width-2.0)/2.0;
     CGContextAddArc(context,centerX,centerY,radius,0.0,M_PI*2,YES);
     CGContextFillPath(context);
+    CGContextAddArc(context,centerX,centerY,radius-1,0.0,M_PI*2,YES);
     CGContextStrokePath(context);
-    CGContextClosePath(context);
     
-    CGContextBeginPath(context);
+    // draw a little circle
     CGContextSetLineWidth(context,4);
     CGContextSetRGBFillColor(context,0.0,0.0,1.0,1.0);
     radius = LITTLE_CIRCLE_WIDTH/2.0;
     CGContextAddArc(context,centerX,centerY,radius,0.0,M_PI*2,YES);
     CGContextFillPath(context);
+    CGContextAddArc(context,centerX,centerY,radius,0.0,M_PI*2,YES);
     CGContextStrokePath(context);
-    CGContextClosePath(context);
-    
-    // draw a little circle
-    
+
 }
 
 
