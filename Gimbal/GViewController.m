@@ -44,6 +44,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"LocateMe";
+    self.navigationController.navigationBar.translucent = YES;
+
+    self.view.backgroundColor = [UIColor colorWithRed:(253/255.0) green:(146/255.0) blue:(39/255.0) alpha:1.0];
     
     self.beaconManager = [GBeaconManager sharedManager];
     self.beaconManager.delegate = self;

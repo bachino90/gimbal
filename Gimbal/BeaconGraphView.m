@@ -29,6 +29,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.backgroundColor = [UIColor orangeColor];
         [self setUpView];
     }
     return self;

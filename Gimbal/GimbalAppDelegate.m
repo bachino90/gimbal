@@ -36,6 +36,7 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
+    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor orangeColor];
     shadow.shadowOffset = CGSizeMake(0, 1);

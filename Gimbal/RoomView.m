@@ -115,7 +115,8 @@
     // The other option is to set the layer as opaque=NO;
     // eliminate the following two lines of code
     // and set the scroll view background color
-    CGContextSetRGBFillColor(context, (255/255.0),(131/255.0),(58/255.0),0.15);
+    //CGContextSetRGBFillColor(context, (255/255.0),(131/255.0),(58/255.0),0.15);
+    CGContextSetRGBFillColor(context, (255/255.0),(237/255.0),(226/255.0),1);
     CGContextFillRect(context,self.bounds);
     
     //Constants
