@@ -10,4 +10,6 @@
 
 @interface GraphGridView : UIView
 
+@property (nonatomic, strong) UIColor *color;
+
 @end

@@ -31,7 +31,7 @@
         // Initialization code
         CATiledLayer *tempTiledLayer = (CATiledLayer*)self.layer;
         tempTiledLayer.levelsOfDetail = 5;
-        tempTiledLayer.levelsOfDetailBias = 4;
+        tempTiledLayer.levelsOfDetailBias = 2;
         self.opaque=NO;
         
         self.beaconsViews = [NSMutableDictionary dictionary];
@@ -138,7 +138,7 @@
     
     // draw a simple plus sign
     CGContextSetRGBStrokeColor(context, 0.8, 0.8, 0.8, 0.8);
-    CGContextSetLineWidth(context, CGContextGetCTM(context).a/CGContextGetCTM(context).a);
+    CGContextSetLineWidth(context, 1/CGContextGetCTM(context).a);
     CGContextBeginPath(context);
     for (int i=0; i<=numberOfRules; i++) {
         CGContextMoveToPoint(context,delta,0.0);

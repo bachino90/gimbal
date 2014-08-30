@@ -97,17 +97,17 @@
     CGFloat centerY = centerX;
     
     // draw a big circle
-    CGContextSetLineWidth(context,2);
+    CGContextSetLineWidth(context,4/CGContextGetCTM(context).a);
     CGContextSetRGBFillColor(context,0.0,0.0,1.0,0.4);
     CGContextSetRGBStrokeColor(context,0.0,0.0,1.0,1.0);
-    CGFloat radius = (self.bounds.size.width-2.0)/2.0;
+    CGFloat radius = ((self.bounds.size.width)/2.0)-1.0;
     CGContextAddArc(context,centerX,centerY,radius,0.0,M_PI*2,YES);
     CGContextFillPath(context);
-    CGContextAddArc(context,centerX,centerY,radius-1,0.0,M_PI*2,YES);
+    CGContextAddArc(context,centerX,centerY,radius,0.0,M_PI*2,YES);
     CGContextStrokePath(context);
     
     // draw a little circle
-    CGContextSetLineWidth(context,4);
+    CGContextSetLineWidth(context,4/CGContextGetCTM(context).a);
     CGContextSetRGBFillColor(context,0.0,0.0,1.0,1.0);
     radius = LITTLE_CIRCLE_WIDTH/2.0;
     CGContextAddArc(context,centerX,centerY,radius,0.0,M_PI*2,YES);

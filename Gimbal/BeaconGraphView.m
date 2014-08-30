@@ -29,7 +29,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor orangeColor];
         [self setUpView];
     }
     return self;
@@ -42,19 +41,57 @@
 #define GRID_X_MARGIN 0.0
 
 - (void)setUpView {
-    //self.backgroundColor = [UIColor whiteColor];
-    self.graphType = GraphTypeRSSI;
     self.gridView = [[GraphGridView alloc]initWithFrame:CGRectMake(GRID_X_MARGIN, 0.0, self.frame.size.width-GRID_X_MARGIN, self.frame.size.height)];
-    [self addSubview:self.gridView];
-    self.axisView = [[GraphAxisView alloc]initWithFrame:CGRectMake(0.0, 0.0, GRID_X_MARGIN, self.frame.size.height)];
-    [self addSubview:self.axisView];
+    self.axisView = [[GraphAxisView alloc]initWithFrame:CGRectMake(0.0, 0.0, 20.0, self.frame.size.height)];
     self.graphView = [[GraphView alloc]initWithFrame:CGRectMake(GRID_X_MARGIN, 0.0, self.frame.size.width-GRID_X_MARGIN, self.frame.size.height)];
+    self.graphType = GraphTypeRSSI;
+    [self addSubview:self.gridView];
+    [self addSubview:self.axisView];
     [self addSubview:self.graphView];
 }
 
 - (void)setGraphType:(GraphType)graphType {
     _graphType = graphType;
-    [self setNeedsDisplay];
+    if (graphType == GraphTypeRSSI) {
+        self.backgroundColor = [UIColor orangeColor];
+        self.gridView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+        self.axisView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+        self.graphView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+        //// Color Declarations
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        UIColor* gradientColor = [UIColor colorWithRed: 0.956 green: 0.743 blue: 0.396 alpha: 0.45];//[UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.95];
+        UIColor* gradientColor2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.04];
+        
+        //// Gradient Declarations
+        CGFloat gradientLocations[] = {0, 1};
+        self.graphView.gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)@[(id)gradientColor.CGColor, (id)gradientColor2.CGColor], gradientLocations);
+    } else if (graphType == GraphTypeDistance) {
+        self.backgroundColor = [UIColor orangeColor];
+        self.gridView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+        self.axisView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+        self.graphView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+        //// Color Declarations
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        UIColor* gradientColor = [UIColor colorWithRed: 0.956 green: 0.743 blue: 0.396 alpha: 0.45];//[UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.95];
+        UIColor* gradientColor2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.04];
+        
+        //// Gradient Declarations
+        CGFloat gradientLocations[] = {0, 1};
+        self.graphView.gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)@[(id)gradientColor.CGColor, (id)gradientColor2.CGColor], gradientLocations);
+    } else if (graphType == GraphTypeTemperature) {
+        self.backgroundColor = [UIColor orangeColor];
+        self.gridView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+        self.axisView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+        self.graphView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+        //// Color Declarations
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        UIColor* gradientColor = [UIColor colorWithRed: 0.956 green: 0.743 blue: 0.396 alpha: 0.45];//[UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.95];
+        UIColor* gradientColor2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.04];
+        
+        //// Gradient Declarations
+        CGFloat gradientLocations[] = {0, 1};
+        self.graphView.gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)@[(id)gradientColor.CGColor, (id)gradientColor2.CGColor], gradientLocations);
+    }
 }
 
 - (void)setBeacon:(GBeacon *)beacon {
