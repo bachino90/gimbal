@@ -52,46 +52,12 @@
 
 - (void)setGraphType:(GraphType)graphType {
     _graphType = graphType;
-    if (graphType == GraphTypeRSSI) {
-        self.backgroundColor = [UIColor orangeColor];
-        self.gridView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
-        self.axisView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
-        self.graphView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
-        //// Color Declarations
-        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-        UIColor* gradientColor = [UIColor colorWithRed: 0.956 green: 0.743 blue: 0.396 alpha: 0.45];//[UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.95];
-        UIColor* gradientColor2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.04];
-        
-        //// Gradient Declarations
-        CGFloat gradientLocations[] = {0, 1};
-        self.graphView.gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)@[(id)gradientColor.CGColor, (id)gradientColor2.CGColor], gradientLocations);
-    } else if (graphType == GraphTypeDistance) {
-        self.backgroundColor = [UIColor orangeColor];
-        self.gridView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
-        self.axisView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
-        self.graphView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
-        //// Color Declarations
-        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-        UIColor* gradientColor = [UIColor colorWithRed: 0.956 green: 0.743 blue: 0.396 alpha: 0.45];//[UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.95];
-        UIColor* gradientColor2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.04];
-        
-        //// Gradient Declarations
-        CGFloat gradientLocations[] = {0, 1};
-        self.graphView.gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)@[(id)gradientColor.CGColor, (id)gradientColor2.CGColor], gradientLocations);
-    } else if (graphType == GraphTypeTemperature) {
-        self.backgroundColor = [UIColor orangeColor];
-        self.gridView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
-        self.axisView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
-        self.graphView.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
-        //// Color Declarations
-        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-        UIColor* gradientColor = [UIColor colorWithRed: 0.956 green: 0.743 blue: 0.396 alpha: 0.45];//[UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.95];
-        UIColor* gradientColor2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.04];
-        
-        //// Gradient Declarations
-        CGFloat gradientLocations[] = {0, 1};
-        self.graphView.gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)@[(id)gradientColor.CGColor, (id)gradientColor2.CGColor], gradientLocations);
-    }
+    self.backgroundColor = [UIColor backgroundColorForType:graphType]; //[UIColor orangeColor];
+    self.gridView.color = [UIColor gridColorForType:graphType];
+    self.axisView.color = [UIColor axisColorForType:graphType];
+    self.graphView.strokeColor = [UIColor strokeColorForType:graphType];
+    self.graphView.gradientColor1 = [UIColor gradientColor1ForType:graphType];
+    self.graphView.gradientColor2 = [UIColor gradientColor2ForType:graphType];
 }
 
 - (void)setBeacon:(GBeacon *)beacon {

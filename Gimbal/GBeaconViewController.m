@@ -32,13 +32,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.title = @"Back";
     // Set the background and shadow image to get rid of the line.
     self.view.backgroundColor = [UIColor colorWithRed:(253/255.0) green:(146/255.0) blue:(39/255.0) alpha:1.0];
     self.uuidLabel.text = [NSString stringWithFormat:@"%@",self.beacon.identifier];
 
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+    //[self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    //self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
     
     [self setUpView];
 }

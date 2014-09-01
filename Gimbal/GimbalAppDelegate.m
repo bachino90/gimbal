@@ -30,19 +30,25 @@
     
     //self.placeConnector = [[QLContextPlaceConnector alloc] init];
     //self.placeConnector.delegate = self;
-    
-    
-    
+    [[UILabel appearance]setTintColor:[UIColor fontColor]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    UIColor *navColor = [UIColor navBarColor];
+    CGContextSetFillColorWithColor(context, [navColor CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    [[UINavigationBar appearance] setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor orangeColor];
     shadow.shadowOffset = CGSizeMake(0, 1);
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor whiteColor], NSForegroundColorAttributeName,
-                                                           shadow, NSShadowAttributeName, nil]];
+                                                           nil]];
     /*
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,

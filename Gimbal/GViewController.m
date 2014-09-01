@@ -43,10 +43,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"LocateMe";
     self.navigationController.navigationBar.translucent = YES;
 
-    self.view.backgroundColor = [UIColor colorWithRed:(253/255.0) green:(146/255.0) blue:(39/255.0) alpha:1.0];
+    //self.view.backgroundColor = [UIColor colorWithRed:(253/255.0) green:(146/255.0) blue:(39/255.0) alpha:1.0];
     
     self.beaconManager = [GBeaconManager sharedManager];
     self.beaconManager.delegate = self;
@@ -59,6 +58,8 @@
     self.scrollView.minimumZoomScale = 1.0;
     self.scrollView.maximumZoomScale = 3.0;
     [self.scrollView addSubview:self.roomView];
+    //CGContextSetRGBFillColor(context, (255/255.0),(237/255.0),(226/255.0),1);
+    self.scrollView.backgroundColor = [UIColor scrollViewBackgroundColor];
     
     self.tableView.backgroundColor = [UIColor colorWithRed:(253/255.0) green:(146/255.0) blue:(39/255.0) alpha:0.8];
     
@@ -70,6 +71,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     self.normalScrollViewFrame = self.scrollView.frame;
     self.normalTableViewFrame = self.tableView.frame;
     self.fullScrollViewFrame = CGRectMake(self.scrollView.frame.origin.x, self.scrollView.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
@@ -80,6 +82,7 @@
 {
     [super viewWillDisappear:animated];
     // Remove all observers
+    self.title = @"";
     for (GBeaconTableViewCell *cell in self.tableView.visibleCells) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         GBeacon *beacon = [self.beaconManager beaconAtIndex:indexPath.row];
@@ -92,6 +95,7 @@
 {
     [super viewWillAppear:animated];
     // Remove all observers
+    self.title = @"LocateMe";
     for (GBeaconTableViewCell *cell in self.tableView.visibleCells) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         GBeacon *beacon = [self.beaconManager beaconAtIndex:indexPath.row];

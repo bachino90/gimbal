@@ -11,6 +11,7 @@
 #import "GBeacon.h"
 
 @interface GBeaconView ()
+@property (nonatomic) RGBAColor color;
 @end
 
 #define LITTLE_CIRCLE_WIDTH 5.0f
@@ -29,6 +30,8 @@
         tempTiledLayer.levelsOfDetail = 5;
         tempTiledLayer.levelsOfDetailBias = 2;
         self.opaque=YES;
+        
+        self.color = [UIColor roomViewBeaconColor];
     }
     return self;
 }
@@ -90,29 +93,29 @@
     // The other option is to set the layer as opaque=NO;
     // eliminate the following two lines of code
     // and set the scroll view background color
-    CGContextSetRGBFillColor(context,1.0,1.0,1.0,0.0);
-    CGContextFillRect(context,self.bounds);
+    CGContextSetRGBFillColor(context, self.color.red, self.color.green, self.color.blue, 0.0);
+    CGContextFillRect(context, self.bounds);
     
     CGFloat centerX = (self.bounds.size.width / 2.0);
     CGFloat centerY = centerX;
     
     // draw a big circle
-    CGContextSetLineWidth(context,4/CGContextGetCTM(context).a);
-    CGContextSetRGBFillColor(context,0.0,0.0,1.0,0.4);
-    CGContextSetRGBStrokeColor(context,0.0,0.0,1.0,1.0);
+    CGContextSetLineWidth(context, 4/CGContextGetCTM(context).a);
+    CGContextSetRGBFillColor(context, self.color.red, self.color.green, self.color.blue, 0.4);
+    CGContextSetRGBStrokeColor(context, self.color.red, self.color.green, self.color.blue, 1.0);
     CGFloat radius = ((self.bounds.size.width)/2.0)-1.0;
-    CGContextAddArc(context,centerX,centerY,radius,0.0,M_PI*2,YES);
+    CGContextAddArc(context, centerX, centerY, radius,0.0, M_PI*2, YES);
     CGContextFillPath(context);
-    CGContextAddArc(context,centerX,centerY,radius,0.0,M_PI*2,YES);
+    CGContextAddArc(context, centerX, centerY, radius, 0.0, M_PI*2, YES);
     CGContextStrokePath(context);
     
     // draw a little circle
-    CGContextSetLineWidth(context,4/CGContextGetCTM(context).a);
-    CGContextSetRGBFillColor(context,0.0,0.0,1.0,1.0);
+    CGContextSetLineWidth(context, 4/CGContextGetCTM(context).a);
+    CGContextSetRGBFillColor(context, self.color.red, self.color.green, self.color.blue, 1.0);
     radius = LITTLE_CIRCLE_WIDTH/2.0;
-    CGContextAddArc(context,centerX,centerY,radius,0.0,M_PI*2,YES);
+    CGContextAddArc(context, centerX, centerY, radius, 0.0, M_PI*2, YES);
     CGContextFillPath(context);
-    CGContextAddArc(context,centerX,centerY,radius,0.0,M_PI*2,YES);
+    CGContextAddArc(context, centerX, centerY, radius, 0.0, M_PI*2, YES);
     CGContextStrokePath(context);
 
 }

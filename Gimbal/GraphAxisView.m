@@ -26,6 +26,7 @@
         } else {
             self.deltaLine = 60.0f;
         }
+        self.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
     }
     return self;
 }
@@ -53,8 +54,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     // draw stroke
-    
-    CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
+    CGContextSetStrokeColorWithColor(context, self.color.CGColor);
     CGContextSetLineWidth(context, 0.5);
     CGContextSetTextDrawingMode(context, kCGTextStroke);
     

@@ -7,7 +7,6 @@
 //
 
 #import "RoomView.h"
-#import "GridView.h"
 #import "GBeaconView.h"
 #import "MeView.h"
 #import "GBeacon.h"
@@ -18,6 +17,9 @@
 @property (nonatomic, strong) NSMutableDictionary *beaconsViews;
 @property (nonatomic, strong) MeView *meView;
 @property (nonatomic, readwrite) CGFloat scale;
+
+@property (nonatomic) RGBAColor backgroundColor;
+@property (nonatomic) RGBAColor lineColor;
 @end
 
 @implementation RoomView
@@ -36,6 +38,9 @@
         
         self.beaconsViews = [NSMutableDictionary dictionary];
         self.scale = DEFAULT_SCALE;
+        
+        self.backgroundColor = [UIColor roomViewBackgroundColor];
+        self.lineColor = [UIColor roomViewScaleLineColor];
     }
     return self;
 }
@@ -116,7 +121,7 @@
     // eliminate the following two lines of code
     // and set the scroll view background color
     //CGContextSetRGBFillColor(context, (255/255.0),(131/255.0),(58/255.0),0.15);
-    CGContextSetRGBFillColor(context, (255/255.0),(237/255.0),(226/255.0),1);
+    CGContextSetRGBFillColor(context, self.backgroundColor.red,self.backgroundColor.green,self.backgroundColor.blue,self.backgroundColor.alpha);//(context, (255/255.0),(237/255.0),(226/255.0),1);
     CGContextFillRect(context,self.bounds);
     
     //Constants
@@ -137,7 +142,7 @@
     float delta = 0;
     
     // draw a simple plus sign
-    CGContextSetRGBStrokeColor(context, 0.8, 0.8, 0.8, 0.8);
+    CGContextSetRGBStrokeColor(context, self.lineColor.red,self.lineColor.green,self.lineColor.blue,self.lineColor.alpha);//(context, 0.8, 0.8, 0.8, 0.8);
     CGContextSetLineWidth(context, 1/CGContextGetCTM(context).a);
     CGContextBeginPath(context);
     for (int i=0; i<=numberOfRules; i++) {

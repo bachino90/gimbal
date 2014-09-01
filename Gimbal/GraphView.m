@@ -24,6 +24,9 @@
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor clearColor];
+        self.strokeColor = [UIColor strokeColorForType:GraphTypeRSSI];
+        self.gradientColor1 = [UIColor gradientColor1ForType:GraphTypeRSSI];
+        self.gradientColor2 = [UIColor gradientColor2ForType:GraphTypeRSSI];
     }
     return self;
 }
@@ -51,9 +54,9 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     //// Color Declarations
-    UIColor* colorStroke = [UIColor colorWithRed: 0.956 green: 0.743 blue: 0.396 alpha: 1];
-    UIColor* gradientColor = [UIColor colorWithRed: 0.956 green: 0.743 blue: 0.396 alpha: 0.45];//[UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.95];
-    UIColor* gradientColor2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.04];
+    UIColor* colorStroke = self.strokeColor;
+    UIColor* gradientColor = self.gradientColor1;//[UIColor colorWithRed: 0.956 green: 0.743 blue: 0.396 alpha: 0.45];//[UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.95];
+    UIColor* gradientColor2 = self.gradientColor2;//[UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.04];
     
     //// Gradient Declarations
     CGFloat gradientLocations[] = {0, 1};

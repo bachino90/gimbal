@@ -25,6 +25,7 @@
         } else {
             self.deltaLine = 60.0f;
         }
+        self.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
     }
     return self;
 }
@@ -44,7 +45,7 @@
     
     float y = margin;
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 0.5);
+    CGContextSetStrokeColorWithColor(context, self.color.CGColor);
     //CGContextSetLineWidth(context,1);
     CGFloat dotRadius = 2.0;
     CGFloat lengths[2];

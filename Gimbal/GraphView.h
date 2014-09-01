@@ -14,7 +14,8 @@
 
 @property (nonatomic) GBeacon *beacon;
 
-@property (nonatomic, strong) UIColor *color;
-@property (nonatomic) CGGradientRef gradient;
+@property (nonatomic, strong) UIColor *strokeColor;
+@property (nonatomic) UIColor *gradientColor1;
+@property (nonatomic) UIColor *gradientColor2;
 
 @end
