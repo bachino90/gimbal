@@ -14,5 +14,6 @@
 
 @property (nonatomic, weak) GBeacon *beacon;
 @property (nonatomic) GraphType graphType;
+@property (nonatomic) BOOL clearBackground;
 
 @end

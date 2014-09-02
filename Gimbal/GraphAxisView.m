@@ -60,8 +60,9 @@
     
     float rectHeight = 10.0;
     float y = margin - rectHeight - 1.0;
+    y+=self.deltaLine;
     CGRect rect2 = CGRectMake(3.0, y, width, rectHeight);
-    for (int i=0; i<=numberOfGaps; i++) {
+    for (int i=1; i<=numberOfGaps; i++) {
         
         rect2 = CGRectMake(3.0, y, width, 10.0);
         [@"100" drawInRect:CGRectIntegral(rect2) withAttributes:@{NSFontAttributeName: font}];

@@ -43,31 +43,26 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor backgroundColor];
     self.navigationController.navigationBar.translucent = YES;
-
-    //self.view.backgroundColor = [UIColor colorWithRed:(253/255.0) green:(146/255.0) blue:(39/255.0) alpha:1.0];
     
     self.beaconManager = [GBeaconManager sharedManager];
     self.beaconManager.delegate = self;
     [self.beaconManager startScanning];
-    
-    //self.visibleCells = [NSMutableArray array];
     
     self.roomView = [[RoomView alloc]initWithFrame:self.scrollView.bounds];
     self.scrollView.contentSize = self.scrollView.frame.size;
     self.scrollView.minimumZoomScale = 1.0;
     self.scrollView.maximumZoomScale = 3.0;
     [self.scrollView addSubview:self.roomView];
-    //CGContextSetRGBFillColor(context, (255/255.0),(237/255.0),(226/255.0),1);
     self.scrollView.backgroundColor = [UIColor scrollViewBackgroundColor];
     
-    self.tableView.backgroundColor = [UIColor colorWithRed:(253/255.0) green:(146/255.0) blue:(39/255.0) alpha:0.8];
+    self.tableView.backgroundColor = [UIColor tableViewBackgroundColor];
     
     self.tapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showFullMap)];
     self.tapGestureRecognizer.numberOfTapsRequired = 1;
     self.tapGestureRecognizer.numberOfTouchesRequired = 1;
     [self.scrollView addGestureRecognizer:self.tapGestureRecognizer];
-    self.navigationItem.leftBarButtonItem = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

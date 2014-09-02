@@ -10,10 +10,6 @@
 #import "GBeacon.h"
 
 @interface GraphView ()
-@property (nonatomic) float *history;
-@property (nonatomic) int index;
-@property (nonatomic) CGFloat minimum;
-@property (nonatomic) CGFloat maximum;
 @end
 
 @implementation GraphView
@@ -36,6 +32,11 @@
     self.index = beacon.index;
     self.maximum = -100;
     self.minimum = -30;
+    [self setNeedsDisplay];
+}
+
+- (void)setHistory:(float *)history {
+    _history = history;
     [self setNeedsDisplay];
 }
 

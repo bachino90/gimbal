@@ -12,7 +12,11 @@
 
 @interface GraphView : UIView
 
-@property (nonatomic) GBeacon *beacon;
+//@property (nonatomic) GBeacon *beacon;
+@property (nonatomic) CGFloat minimum;
+@property (nonatomic) CGFloat maximum;
+@property (nonatomic) float *history;
+@property (nonatomic) int index;
 
 @property (nonatomic, strong) UIColor *strokeColor;
 @property (nonatomic) UIColor *gradientColor1;

@@ -25,7 +25,7 @@
         } else {
             self.deltaLine = 60.0f;
         }
-        self.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+        self.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.35];
     }
     return self;
 }
@@ -47,13 +47,15 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetStrokeColorWithColor(context, self.color.CGColor);
     //CGContextSetLineWidth(context,1);
-    CGFloat dotRadius = 2.0;
+    
+    CGFloat dotRadius = 1.0;
     CGFloat lengths[2];
     lengths[0] = 0;
     lengths[1] = dotRadius * 2;
     CGContextSetLineCap(context, kCGLineCapRound);
     CGContextSetLineWidth(context, dotRadius);
     CGContextSetLineDash(context, 0.0f, lengths, 2);
+
     CGContextBeginPath(context);
     for (int i=0; i<=numberOfGaps; i++) {
         CGContextMoveToPoint(context,0.0,y);

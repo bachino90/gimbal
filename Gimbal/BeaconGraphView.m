@@ -41,6 +41,8 @@
 #define GRID_X_MARGIN 0.0
 
 - (void)setUpView {
+    self.clearBackground = NO;
+    self.backgroundColor = [UIColor clearColor];
     self.gridView = [[GraphGridView alloc]initWithFrame:CGRectMake(GRID_X_MARGIN, 0.0, self.frame.size.width-GRID_X_MARGIN, self.frame.size.height)];
     self.axisView = [[GraphAxisView alloc]initWithFrame:CGRectMake(0.0, 0.0, 20.0, self.frame.size.height)];
     self.graphView = [[GraphView alloc]initWithFrame:CGRectMake(GRID_X_MARGIN, 0.0, self.frame.size.width-GRID_X_MARGIN, self.frame.size.height)];
@@ -52,25 +54,55 @@
 
 - (void)setGraphType:(GraphType)graphType {
     _graphType = graphType;
-    self.backgroundColor = [UIColor backgroundColorForType:graphType]; //[UIColor orangeColor];
+    if (!self.clearBackground) {
+        self.backgroundColor = [UIColor backgroundColorForType:graphType];
+    }
     self.gridView.color = [UIColor gridColorForType:graphType];
     self.axisView.color = [UIColor axisColorForType:graphType];
     self.graphView.strokeColor = [UIColor strokeColorForType:graphType];
     self.graphView.gradientColor1 = [UIColor gradientColor1ForType:graphType];
     self.graphView.gradientColor2 = [UIColor gradientColor2ForType:graphType];
+    switch (self.graphType) {
+        case GraphTypeRSSI:
+            self.graphView.maximum = -100;
+            self.graphView.minimum = -30;
+            break;
+        case GraphTypeDistance:
+            self.graphView.maximum = 20;
+            self.graphView.minimum = 0;
+            break;
+        case GraphTypeTemperature:
+            self.graphView.maximum = 60;
+            self.graphView.minimum = -5;
+            break;
+        default:
+            self.graphView.maximum = -100;
+            self.graphView.minimum = -30;
+            break;
+    }
+    self.beacon = self.beacon;
 }
 
 - (void)setBeacon:(GBeacon *)beacon {
-    self.graphView.beacon = beacon;
-}
+    _beacon = beacon;
+    if (beacon) {
+        self.graphView.index = beacon.index;
+        switch (self.graphType) {
+            case GraphTypeRSSI:
+                self.graphView.history = beacon.filteredRSSI;
+                break;
+            case GraphTypeDistance:
+                self.graphView.history = beacon.historyDistance;
+                break;
+            case GraphTypeTemperature:
+                self.graphView.history = beacon.filteredRSSI;
+                break;
+            default:
+                self.graphView.history = beacon.filteredRSSI;
+                break;
+        }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+    }
 }
-*/
 
 @end

@@ -16,19 +16,19 @@
 #pragma mark UI colors
 
 + (UIColor *)navBarColor {
-    return ORANGE;
+    return [UIColor colorWithRed:(59/255.0) green:(59/255.0) blue:(71/255.0) alpha:1.0];
 }
 
 + (UIColor *)backgroundColor {
-    return [UIColor colorWithRed:(253/255.0) green:(126/255.0) blue:(37/255.0) alpha:1.0];
+    return [UIColor colorWithRed:(45/255.0) green:(45/255.0) blue:(57/255.0) alpha:1.0];
 }
 
 + (UIColor *)tableViewBackgroundColor {
-    return [UIColor colorWithRed:(253/255.0) green:(143/255.0) blue:(31/255.0) alpha:1.0];
+    return [UIColor colorWithRed:(45/255.0) green:(45/255.0) blue:(57/255.0) alpha:1.0];
 }
 
 + (UIColor *)tableViewCellBackgroundColor {
-    return [UIColor colorWithRed:(253/255.0) green:(126/255.0) blue:(37/255.0) alpha:1.0];
+    return [UIColor colorWithRed:(70/255.0) green:(70/255.0) blue:(84/255.0) alpha:1.0];
 }
 
 + (UIColor *)scrollViewBackgroundColor {
@@ -83,10 +83,10 @@
     UIColor *color;
     switch (type) {
         case GraphTypeRSSI:
-            color = [UIColor colorWithRed:(253/255.0) green:(126/255.0) blue:(37/255.0) alpha:1.0];
+            color = [UIColor colorWithRed:(44/255.0) green:(218/255.0) blue:(172/255.0) alpha:1.0];
             break;
         case GraphTypeDistance:
-            
+            color = [UIColor colorWithRed:(248/255.0) green:(129/255.0) blue:(127/255.0) alpha:1.0];
             break;
         case GraphTypeTemperature:
             
@@ -102,16 +102,16 @@
     UIColor *color;
     switch (type) {
         case GraphTypeRSSI:
-            color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+            color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.25];
             break;
         case GraphTypeDistance:
-            color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+            color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.35];
             break;
         case GraphTypeTemperature:
-            color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+            color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.35];
             break;
         default:
-            color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+            color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.35];
             break;
     }
     return color;
@@ -140,10 +140,10 @@
     UIColor *color;
     switch (type) {
         case GraphTypeRSSI:
-            color = [UIColor colorWithRed: 0.956 green: 0.743 blue: 0.396 alpha: 1];
+            color = [UIColor colorWithRed:(44/255.0) green:(218/255.0) blue:(172/255.0) alpha:1.0];//[UIColor colorWithRed:(31/255.0) green:(169/255.0) blue:(171/255.0) alpha:1.0];
             break;
         case GraphTypeDistance:
-            
+            color = [UIColor colorWithRed:(248/255.0) green:(129/255.0) blue:(127/255.0) alpha:1.0];
             break;
         case GraphTypeTemperature:
             
@@ -159,10 +159,10 @@
     UIColor *color;
     switch (type) {
         case GraphTypeRSSI:
-            color = [UIColor colorWithRed: 0.956 green: 0.743 blue: 0.396 alpha: 0.45];
+            color = [UIColor colorWithRed:(44/255.0) green:(218/255.0) blue:(172/255.0) alpha:0.4];
             break;
         case GraphTypeDistance:
-            
+            color = [UIColor colorWithRed:(248/255.0) green:(129/255.0) blue:(127/255.0) alpha:0.4];
             break;
         case GraphTypeTemperature:
             
@@ -178,10 +178,10 @@
     UIColor *color;
     switch (type) {
         case GraphTypeRSSI:
-            color = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.04];
+            color = [UIColor colorWithRed:(44/255.0) green:(218/255.0) blue:(172/255.0) alpha:0.2];
             break;
         case GraphTypeDistance:
-            color = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.04];
+            color = [UIColor colorWithRed:(248/255.0) green:(129/255.0) blue:(127/255.0) alpha:0.2];
             break;
         case GraphTypeTemperature:
             color = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.04];
