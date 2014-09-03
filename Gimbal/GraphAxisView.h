@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) UIColor *color;
 
+- (void)setMaximum:(CGFloat)max andMinimum:(CGFloat)min;
+
 @end

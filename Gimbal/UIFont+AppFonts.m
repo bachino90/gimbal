@@ -10,4 +10,8 @@
 
 @implementation UIFont (AppFonts)
 
++ (UIFont *)appFontWithSize:(CGFloat)size {
+    return [UIFont fontWithName:@"Aller-Light" size:size];
+}
+
 @end

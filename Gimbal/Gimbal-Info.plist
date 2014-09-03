@@ -4,7 +4,22 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
+		<string>ABeeZee-Regular.otf</string>
+		<string>Aller_Lt.ttf</string>
+		<string>Aller_Rg.ttf</string>
+		<string>Aller_LtIt.ttf</string>
+		<string>Amble-LightCondensedItalic.ttf</string>
+		<string>Amble-LightItalic.ttf</string>
+		<string>Amble-Regular.ttf</string>
+		<string>Amble-Light.ttf</string>
+		<string>Amble-LightCondensed.ttf</string>
+		<string>Cabin-Regular.otf</string>
+		<string>CooperHewitt-Book.otf</string>
+		<string>CooperHewitt-LightItalic.otf</string>
+		<string>CooperHewitt-Light.otf</string>
+		<string>Hattori_Hanzo.otf</string>
+		<string>New_Cicle_Fina.ttf</string>
+		<string>OpenSans-CondLight.ttf</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>

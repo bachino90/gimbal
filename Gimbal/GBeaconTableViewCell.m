@@ -46,9 +46,12 @@
     self.backgroundColor = [UIColor tableViewCellBackgroundColor];
     self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds] ;
     self.selectedBackgroundView.backgroundColor = [UIColor tableViewBackgroundColor];
+    self.nameLabel.font = [UIFont appFontWithSize:18.0];
+    self.rssiLabel.font = [UIFont appFontWithSize:13.0];
     self.rssiLabel.backgroundColor = [UIColor strokeColorForType:GraphTypeRSSI];
     self.rssiLabel.layer.cornerRadius = 3;
     self.rssiLabel.layer.masksToBounds = YES;
+    self.distanceLabel.font = [UIFont appFontWithSize:13.0];
     self.distanceLabel.backgroundColor = [UIColor strokeColorForType:GraphTypeDistance];
     self.distanceLabel.layer.cornerRadius = 3;
     self.distanceLabel.layer.masksToBounds = YES;

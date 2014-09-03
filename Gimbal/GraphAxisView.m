@@ -11,6 +11,7 @@
 @interface GraphAxisView ()
 @property (nonatomic) CGFloat deltaLine;
 @property (nonatomic) int numberOfLines;
+@property (nonatomic) NSMutableArray *history;
 @end
 
 @implementation GraphAxisView
@@ -27,16 +28,33 @@
             self.deltaLine = 60.0f;
         }
         self.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+        [self setMaximum:MAX_RSSI andMinimum:MIN_RSSI];
     }
     return self;
 }
 
-/*
-- (void)setDeltaLine:(CGFloat)deltaLine {
-    _deltaLine = deltaLine;
-    self.numberOfLines = 1+floorf(self.frame.size.height/deltaLine);
+#define RECT_HEIGHT 10.0f
+
+- (void)setMaximum:(CGFloat)max andMinimum:(CGFloat)min {
+    float height = self.frame.size.height;
+    int numberOfGaps = floorf(height/self.deltaLine);
+    float heightOfGaps = numberOfGaps * self.deltaLine;
+    float margin = (height-heightOfGaps)/2.0f;
+    
+    //CGFloat y = (_history[i]-self.minimum) * (1/(self.maximum-self.minimum));
+    float y = margin;
+    
+    self.history = [NSMutableArray array];
+    for (int i=0; i<=numberOfGaps; i++) {
+        CGFloat num = ((1-y/height)  * (max-min)) + min;
+        NSString *str = [NSString stringWithFormat:@"%.0f",num];
+        self.history[i] = str;
+        y+=self.deltaLine;
+    }
+    
+    [self setNeedsDisplay];
 }
-*/
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
@@ -50,22 +68,20 @@
     
     
     //CGSize size = CGSizeMake(rect.size.width, rect.size.height);
-    UIFont *font = [UIFont fontWithName:@"Helvetica" size:7];
-    CGContextRef context = UIGraphicsGetCurrentContext();
+    //CGContextRef context = UIGraphicsGetCurrentContext();
+    //draw stroke
+    //CGContextSetStrokeColorWithColor(context, self.color.CGColor);
+    //CGContextSetLineWidth(context, 1.5);
+    //CGContextSetTextDrawingMode(context, kCGTextFill);
     
-    // draw stroke
-    CGContextSetStrokeColorWithColor(context, self.color.CGColor);
-    CGContextSetLineWidth(context, 0.5);
-    CGContextSetTextDrawingMode(context, kCGTextStroke);
-    
-    float rectHeight = 10.0;
-    float y = margin - rectHeight - 1.0;
+    UIFont *font = [UIFont appFontWithSize:10.0];
+    float y = margin - RECT_HEIGHT - 2.0;
     y+=self.deltaLine;
-    CGRect rect2 = CGRectMake(3.0, y, width, rectHeight);
+    CGRect rect2 = CGRectMake(3.0, y, width, RECT_HEIGHT);
     for (int i=1; i<=numberOfGaps; i++) {
         
         rect2 = CGRectMake(3.0, y, width, 10.0);
-        [@"100" drawInRect:CGRectIntegral(rect2) withAttributes:@{NSFontAttributeName: font}];
+        [self.history[i] drawInRect:CGRectIntegral(rect2) withAttributes:@{NSFontAttributeName: font, NSForegroundColorAttributeName: self.color}];
         
         y+=self.deltaLine;
     }

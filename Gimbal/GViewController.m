@@ -90,7 +90,7 @@
 {
     [super viewWillAppear:animated];
     // Remove all observers
-    self.title = @"LocateMe";
+    self.title = @"bearMe";
     for (GBeaconTableViewCell *cell in self.tableView.visibleCells) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         GBeacon *beacon = [self.beaconManager beaconAtIndex:indexPath.row];

@@ -14,7 +14,14 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "UIColor+AppColors.h"
+    #import "UIFont+AppFonts.h"
     #define KVO_KEY_PATH @"updateIndex"
     #define NUMBER_OF_RECORDS 20
     #define RSSI_ONE_METER -77.0f
+    #define MIN_RSSI -30
+    #define MAX_RSSI -100
+    #define MIN_DIST 0
+    #define MAX_DIST 10
+    #define MIN_TEMP -5
+    #define MAX_TEMP 60
 #endif

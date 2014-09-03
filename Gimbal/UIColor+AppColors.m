@@ -16,7 +16,7 @@
 #pragma mark UI colors
 
 + (UIColor *)navBarColor {
-    return [UIColor colorWithRed:(59/255.0) green:(59/255.0) blue:(71/255.0) alpha:1.0];
+    return [UIColor colorWithRed:(59/255.0) green:(59/255.0) blue:(71/255.0) alpha:1.0]; //95,95,114
 }
 
 + (UIColor *)backgroundColor {
@@ -61,18 +61,18 @@
 
 + (RGBAColor)roomViewBeaconColor {
     RGBAColor color;
-    color.red = 0.0;
-    color.green = 0.0;
-    color.blue = 1.0;
+    color.red = 95/255.0;//241/255.0;
+    color.green = 95/255.0;//59/255.0;
+    color.blue = 114/255.0;//94/255.0;
     color.alpha = 1.0;
     return color;//[UIColor blueColor];
 }
 
 + (RGBAColor)roomViewMeColor {
     RGBAColor color;
-    color.red = 1.0;
-    color.green = 0.0;
-    color.blue = 0.0;
+    color.red = 100/255.0;
+    color.green = 120/255.0;
+    color.blue = 230/255.0;
     color.alpha = 1.0;
     return color;//[UIColor redColor];
 }
@@ -89,10 +89,10 @@
             color = [UIColor colorWithRed:(248/255.0) green:(129/255.0) blue:(127/255.0) alpha:1.0];
             break;
         case GraphTypeTemperature:
-            
+            color = [UIColor colorWithRed:(240/255.0) green:(175/255.0) blue:(101/255.0) alpha:1.0];
             break;
         default:
-            color = [UIColor colorWithRed:(253/255.0) green:(126/255.0) blue:(37/255.0) alpha:1.0];
+            color = [UIColor colorWithRed:(44/255.0) green:(218/255.0) blue:(172/255.0) alpha:1.0];
             break;
     }
     return color;
@@ -105,13 +105,13 @@
             color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.25];
             break;
         case GraphTypeDistance:
-            color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.35];
+            color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.25];
             break;
         case GraphTypeTemperature:
-            color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.35];
+            color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.25];
             break;
         default:
-            color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.35];
+            color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.25];
             break;
     }
     return color;
@@ -146,10 +146,10 @@
             color = [UIColor colorWithRed:(248/255.0) green:(129/255.0) blue:(127/255.0) alpha:1.0];
             break;
         case GraphTypeTemperature:
-            
+            color = [UIColor colorWithRed:(240/255.0) green:(175/255.0) blue:(101/255.0) alpha:1.0];
             break;
         default:
-            color = [UIColor colorWithRed: 0.956 green: 0.743 blue: 0.396 alpha: 1];
+            color = [UIColor colorWithRed:(44/255.0) green:(218/255.0) blue:(172/255.0) alpha:1.0];
             break;
     }
     return color;
@@ -165,10 +165,10 @@
             color = [UIColor colorWithRed:(248/255.0) green:(129/255.0) blue:(127/255.0) alpha:0.4];
             break;
         case GraphTypeTemperature:
-            
+            color = [UIColor colorWithRed:(240/255.0) green:(175/255.0) blue:(101/255.0) alpha:0.4];
             break;
         default:
-            color = [UIColor colorWithRed: 0.956 green: 0.743 blue: 0.396 alpha: 0.45];
+            color = [UIColor colorWithRed:(44/255.0) green:(218/255.0) blue:(172/255.0) alpha:0.4];
             break;
     }
     return color;
@@ -184,10 +184,10 @@
             color = [UIColor colorWithRed:(248/255.0) green:(129/255.0) blue:(127/255.0) alpha:0.2];
             break;
         case GraphTypeTemperature:
-            color = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.04];
+            color = [UIColor colorWithRed:(240/255.0) green:(175/255.0) blue:(101/255.0) alpha:0.2];
             break;
         default:
-            color = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.04];
+            color = [UIColor colorWithRed:(44/255.0) green:(218/255.0) blue:(172/255.0) alpha:0.2];
             break;
     }
     return color;

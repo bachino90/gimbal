@@ -64,20 +64,24 @@
     self.graphView.gradientColor2 = [UIColor gradientColor2ForType:graphType];
     switch (self.graphType) {
         case GraphTypeRSSI:
-            self.graphView.maximum = -100;
-            self.graphView.minimum = -30;
+            self.graphView.maximum = MAX_RSSI;
+            self.graphView.minimum = MIN_RSSI;
+            [self.axisView setMaximum:MAX_RSSI andMinimum:MIN_RSSI];
             break;
         case GraphTypeDistance:
-            self.graphView.maximum = 20;
-            self.graphView.minimum = 0;
+            self.graphView.maximum = MAX_DIST;
+            self.graphView.minimum = MIN_DIST;
+            [self.axisView setMaximum:MAX_DIST andMinimum:MIN_DIST];
             break;
         case GraphTypeTemperature:
-            self.graphView.maximum = 60;
-            self.graphView.minimum = -5;
+            self.graphView.maximum = MAX_TEMP;
+            self.graphView.minimum = MIN_TEMP;
+            [self.axisView setMaximum:MAX_TEMP andMinimum:MIN_TEMP];
             break;
         default:
-            self.graphView.maximum = -100;
-            self.graphView.minimum = -30;
+            self.graphView.maximum = MAX_RSSI;
+            self.graphView.minimum = MIN_RSSI;
+            [self.axisView setMaximum:MAX_RSSI andMinimum:MIN_RSSI];
             break;
     }
     self.beacon = self.beacon;

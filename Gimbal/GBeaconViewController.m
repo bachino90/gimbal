@@ -7,6 +7,7 @@
 //
 
 #import "GBeaconViewController.h"
+#import <QuartzCore/QuartzCore.h>
 #import "GBeacon.h"
 #import "BeaconGraphView.h"
 
@@ -17,6 +18,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *uuidLabel;
 @property (weak, nonatomic) IBOutlet UIView *rssiView;
 @property (weak, nonatomic) IBOutlet UIView *distanceView;
+//Constant Labels
+@property (weak, nonatomic) IBOutlet UILabel *dbLabel;
+@property (weak, nonatomic) IBOutlet UILabel *mLabel;
+@property (weak, nonatomic) IBOutlet UILabel *clientTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *storeTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *areaTitleLabel;
 @end
 
 @implementation GBeaconViewController
@@ -40,16 +47,33 @@
 }
 
 - (void)setUpView {
-    self.view.backgroundColor = [UIColor navBarColor];//[UIColor colorWithRed:(253/255.0) green:(146/255.0) blue:(39/255.0) alpha:1.0];
+    self.view.backgroundColor = [UIColor navBarColor];
+    self.mLabel.font = [UIFont appFontWithSize:11.0];
+    self.dbLabel.font = [UIFont appFontWithSize:11.0];
+    self.clientTitleLabel.font = [UIFont appFontWithSize:11.0];
+    self.storeTitleLabel.font = [UIFont appFontWithSize:11.0];
+    self.areaTitleLabel.font = [UIFont appFontWithSize:11.0];
+    self.uuidLabel.font = [UIFont appFontWithSize:15.0];
     
-    self.graphView.clearBackground = NO;
+    self.graphView.clearBackground = YES;
     self.graphView.graphType = GraphTypeRSSI;
-    //self.graphView.beacon = self.beacon;
     
-    self.rssiLabel.text = [NSString stringWithFormat:@"%i",self.beacon.lastRSSI];
+    self.rssiLabel.text = [NSString stringWithFormat:@"%li",(long)self.beacon.lastRSSI];
+    self.rssiLabel.font = [UIFont appFontWithSize:31.0];
+    
     self.rssiView.backgroundColor = [UIColor backgroundColorForType:GraphTypeRSSI];
+    self.rssiView.layer.cornerRadius = self.rssiView.bounds.size.width/2;
+    self.rssiView.layer.borderWidth = 2.0;
+    self.rssiView.layer.borderColor = [UIColor backgroundColorForType:GraphTypeRSSI].CGColor;
+    
     self.distanceLabel.text = [NSString stringWithFormat:@"%.2f",self.beacon.lastDistance];
-    self.distanceView.backgroundColor = [UIColor backgroundColorForType:GraphTypeDistance];
+    self.distanceLabel.font = [UIFont appFontWithSize:31.0];
+    
+    //self.distanceView.backgroundColor = [UIColor backgroundColorForType:GraphTypeDistance];
+    self.distanceView.layer.cornerRadius = self.distanceView.bounds.size.width/2;
+    self.distanceView.layer.borderWidth = 2.0;
+    self.distanceView.layer.borderColor = [UIColor backgroundColorForType:GraphTypeDistance].CGColor;
+    
     
     self.uuidLabel.text = [NSString stringWithFormat:@"%@",self.beacon.identifier];
 }
@@ -83,19 +107,36 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"updateIndex"]) {
         self.beacon = (GBeacon *)object;
-        //[self setUpView];
     }
 }
 
 - (IBAction)rssiButtonTapped:(UIButton *)sender {
-    if (self.graphView.graphType != GraphTypeRSSI) {
-        self.graphView.graphType = GraphTypeRSSI;
-    }
+    [self selectGraphType:GraphTypeRSSI];
 }
 
 - (IBAction)distanceButtonTapped:(UIButton *)sender {
-    if (self.graphView.graphType != GraphTypeDistance) {
-        self.graphView.graphType = GraphTypeDistance;
+    [self selectGraphType:GraphTypeDistance];
+}
+
+- (void)selectGraphType:(GraphType)type {
+    if (self.graphView.graphType != type) {
+        self.graphView.graphType = type;
+        [self selectButtonForType:type];
+    }
+}
+
+- (void)selectButtonForType:(GraphType)type {
+    switch (type) {
+        case GraphTypeRSSI:
+            self.rssiView.backgroundColor = [UIColor backgroundColorForType:GraphTypeRSSI];
+            self.distanceView.backgroundColor = [UIColor clearColor];
+            break;
+        case GraphTypeDistance:
+            self.rssiView.backgroundColor = [UIColor clearColor];
+            self.distanceView.backgroundColor = [UIColor backgroundColorForType:GraphTypeDistance];
+            break;
+        default:
+            break;
     }
 }
 

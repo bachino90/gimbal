@@ -10,6 +10,38 @@
 		0E3CCDC019B4D56000AF1D94 /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CCDBF19B4D56000AF1D94 /* UIColor+AppColors.m */; };
 		0E3CCDC319B4EDF500AF1D94 /* UIFont+AppFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CCDC219B4EDF500AF1D94 /* UIFont+AppFonts.m */; };
 		0E5C92D819A5433A0035363F /* GBeaconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5C92D719A5433A0035363F /* GBeaconViewController.m */; };
+		0E6E3C4819B7758600221771 /* Aller_Lt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C4719B7758600221771 /* Aller_Lt.ttf */; };
+		0E6E3C4919B7758600221771 /* Aller_Lt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C4719B7758600221771 /* Aller_Lt.ttf */; };
+		0E6E3C4E19B777F100221771 /* Aller_Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C4D19B777F100221771 /* Aller_Rg.ttf */; };
+		0E6E3C4F19B777F100221771 /* Aller_Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C4D19B777F100221771 /* Aller_Rg.ttf */; };
+		0E6E3C5119B7781C00221771 /* Aller_LtIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C5019B7781C00221771 /* Aller_LtIt.ttf */; };
+		0E6E3C5219B7781C00221771 /* Aller_LtIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C5019B7781C00221771 /* Aller_LtIt.ttf */; };
+		0E6E3C5419B7784900221771 /* ABeeZee-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C5319B7784900221771 /* ABeeZee-Regular.otf */; };
+		0E6E3C5519B7784900221771 /* ABeeZee-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C5319B7784900221771 /* ABeeZee-Regular.otf */; };
+		0E6E3C5819B7789900221771 /* Amble-LightCondensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C5719B7789900221771 /* Amble-LightCondensed.ttf */; };
+		0E6E3C5919B7789900221771 /* Amble-LightCondensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C5719B7789900221771 /* Amble-LightCondensed.ttf */; };
+		0E6E3C5B19B778A000221771 /* Amble-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C5A19B778A000221771 /* Amble-Light.ttf */; };
+		0E6E3C5C19B778A000221771 /* Amble-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C5A19B778A000221771 /* Amble-Light.ttf */; };
+		0E6E3C5E19B778A700221771 /* Amble-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C5D19B778A700221771 /* Amble-Regular.ttf */; };
+		0E6E3C5F19B778A700221771 /* Amble-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C5D19B778A700221771 /* Amble-Regular.ttf */; };
+		0E6E3C6119B778BA00221771 /* Amble-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C6019B778BA00221771 /* Amble-LightItalic.ttf */; };
+		0E6E3C6219B778BA00221771 /* Amble-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C6019B778BA00221771 /* Amble-LightItalic.ttf */; };
+		0E6E3C6419B778C100221771 /* Amble-LightCondensedItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C6319B778C100221771 /* Amble-LightCondensedItalic.ttf */; };
+		0E6E3C6519B778C100221771 /* Amble-LightCondensedItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C6319B778C100221771 /* Amble-LightCondensedItalic.ttf */; };
+		0E6E3C6819B7791000221771 /* Cabin-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C6719B7791000221771 /* Cabin-Regular.otf */; };
+		0E6E3C6919B7791000221771 /* Cabin-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C6719B7791000221771 /* Cabin-Regular.otf */; };
+		0E6E3C6C19B7794A00221771 /* CooperHewitt-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C6B19B7794A00221771 /* CooperHewitt-Light.otf */; };
+		0E6E3C6D19B7794A00221771 /* CooperHewitt-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C6B19B7794A00221771 /* CooperHewitt-Light.otf */; };
+		0E6E3C6F19B7795000221771 /* CooperHewitt-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C6E19B7795000221771 /* CooperHewitt-LightItalic.otf */; };
+		0E6E3C7019B7795000221771 /* CooperHewitt-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C6E19B7795000221771 /* CooperHewitt-LightItalic.otf */; };
+		0E6E3C7219B7796200221771 /* CooperHewitt-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C7119B7796200221771 /* CooperHewitt-Book.otf */; };
+		0E6E3C7319B7796200221771 /* CooperHewitt-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C7119B7796200221771 /* CooperHewitt-Book.otf */; };
+		0E6E3C7619B779A300221771 /* Hattori_Hanzo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C7519B779A300221771 /* Hattori_Hanzo.otf */; };
+		0E6E3C7719B779A300221771 /* Hattori_Hanzo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C7519B779A300221771 /* Hattori_Hanzo.otf */; };
+		0E6E3C7A19B779C800221771 /* New_Cicle_Fina.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C7919B779C800221771 /* New_Cicle_Fina.ttf */; };
+		0E6E3C7B19B779C800221771 /* New_Cicle_Fina.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C7919B779C800221771 /* New_Cicle_Fina.ttf */; };
+		0E6E3C7D19B779E500221771 /* OpenSans-CondLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C7C19B779E500221771 /* OpenSans-CondLight.ttf */; };
+		0E6E3C7E19B779E500221771 /* OpenSans-CondLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E3C7C19B779E500221771 /* OpenSans-CondLight.ttf */; };
 		0E8EF24419A78DF200EF21F5 /* BeaconGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EF24319A78DF200EF21F5 /* BeaconGraphView.m */; };
 		0EC7FDA819AB9EDD00B999F4 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC7FDA719AB9EDD00B999F4 /* GraphView.m */; };
 		0EC7FDAB19AB9FEF00B999F4 /* GraphGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC7FDAA19AB9FEF00B999F4 /* GraphGridView.m */; };
@@ -68,6 +100,22 @@
 		0E3CCDC219B4EDF500AF1D94 /* UIFont+AppFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+AppFonts.m"; sourceTree = "<group>"; };
 		0E5C92D619A5433A0035363F /* GBeaconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBeaconViewController.h; sourceTree = "<group>"; };
 		0E5C92D719A5433A0035363F /* GBeaconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBeaconViewController.m; sourceTree = "<group>"; };
+		0E6E3C4719B7758600221771 /* Aller_Lt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aller_Lt.ttf; path = "../../../../Downloads/Fonts/Aller.zip Folder/Aller_Lt.ttf"; sourceTree = "<group>"; };
+		0E6E3C4D19B777F100221771 /* Aller_Rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aller_Rg.ttf; path = "../../../../Downloads/Fonts/Aller.zip Folder/Aller_Rg.ttf"; sourceTree = "<group>"; };
+		0E6E3C5019B7781C00221771 /* Aller_LtIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aller_LtIt.ttf; path = "../../../../Downloads/Fonts/Aller.zip Folder/Aller_LtIt.ttf"; sourceTree = "<group>"; };
+		0E6E3C5319B7784900221771 /* ABeeZee-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ABeeZee-Regular.otf"; path = "../../../../Downloads/Fonts/abeezee.zip Folder/ABeeZee-Regular.otf"; sourceTree = "<group>"; };
+		0E6E3C5719B7789900221771 /* Amble-LightCondensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Amble-LightCondensed.ttf"; path = "../../../../Downloads/Fonts/amble.zip Folder/Amble-LightCondensed.ttf"; sourceTree = "<group>"; };
+		0E6E3C5A19B778A000221771 /* Amble-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Amble-Light.ttf"; path = "../../../../Downloads/Fonts/amble.zip Folder/Amble-Light.ttf"; sourceTree = "<group>"; };
+		0E6E3C5D19B778A700221771 /* Amble-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Amble-Regular.ttf"; path = "../../../../Downloads/Fonts/amble.zip Folder/Amble-Regular.ttf"; sourceTree = "<group>"; };
+		0E6E3C6019B778BA00221771 /* Amble-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Amble-LightItalic.ttf"; path = "../../../../Downloads/Fonts/amble.zip Folder/Amble-LightItalic.ttf"; sourceTree = "<group>"; };
+		0E6E3C6319B778C100221771 /* Amble-LightCondensedItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Amble-LightCondensedItalic.ttf"; path = "../../../../Downloads/Fonts/amble.zip Folder/Amble-LightCondensedItalic.ttf"; sourceTree = "<group>"; };
+		0E6E3C6719B7791000221771 /* Cabin-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cabin-Regular.otf"; path = "../../../../Downloads/Fonts/cabin.zip Folder/Cabin-Regular.otf"; sourceTree = "<group>"; };
+		0E6E3C6B19B7794A00221771 /* CooperHewitt-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CooperHewitt-Light.otf"; path = "../../../../Downloads/Fonts/cooper-hewitt.zip Folder/CooperHewitt-Light.otf"; sourceTree = "<group>"; };
+		0E6E3C6E19B7795000221771 /* CooperHewitt-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CooperHewitt-LightItalic.otf"; path = "../../../../Downloads/Fonts/cooper-hewitt.zip Folder/CooperHewitt-LightItalic.otf"; sourceTree = "<group>"; };
+		0E6E3C7119B7796200221771 /* CooperHewitt-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CooperHewitt-Book.otf"; path = "../../../../Downloads/Fonts/cooper-hewitt.zip Folder/CooperHewitt-Book.otf"; sourceTree = "<group>"; };
+		0E6E3C7519B779A300221771 /* Hattori_Hanzo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Hattori_Hanzo.otf; path = "../../../../Downloads/Fonts/Hattori-Hanzo.zip Folder/Hattori_Hanzo.otf"; sourceTree = "<group>"; };
+		0E6E3C7919B779C800221771 /* New_Cicle_Fina.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = New_Cicle_Fina.ttf; path = "../../../../Downloads/Fonts/New-Cicle.zip Folder/New_Cicle_Fina.ttf"; sourceTree = "<group>"; };
+		0E6E3C7C19B779E500221771 /* OpenSans-CondLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-CondLight.ttf"; path = "../../../../Downloads/Fonts/open-sans-condensed.zip Folder/OpenSans-CondLight.ttf"; sourceTree = "<group>"; };
 		0E8EF24219A78DF200EF21F5 /* BeaconGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconGraphView.h; sourceTree = "<group>"; };
 		0E8EF24319A78DF200EF21F5 /* BeaconGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconGraphView.m; sourceTree = "<group>"; };
 		0EC7FDA619AB9EDD00B999F4 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
@@ -161,6 +209,88 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E6E3C4A19B777CD00221771 /* Aller */ = {
+			isa = PBXGroup;
+			children = (
+				0E6E3C5019B7781C00221771 /* Aller_LtIt.ttf */,
+				0E6E3C4D19B777F100221771 /* Aller_Rg.ttf */,
+				0E6E3C4719B7758600221771 /* Aller_Lt.ttf */,
+			);
+			name = Aller;
+			sourceTree = "<group>";
+		};
+		0E6E3C4C19B777D600221771 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0E6E3C7C19B779E500221771 /* OpenSans-CondLight.ttf */,
+				0E6E3C7919B779C800221771 /* New_Cicle_Fina.ttf */,
+				0E6E3C7819B779AA00221771 /* Hattori Hanzo */,
+				0E6E3C7419B7796900221771 /* CooperHewitt */,
+				0E6E3C6A19B7791200221771 /* Cabin */,
+				0E6E3C6619B778C900221771 /* Amble */,
+				0E6E3C5619B7784C00221771 /* ABeeZee */,
+				0E6E3C4A19B777CD00221771 /* Aller */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		0E6E3C5619B7784C00221771 /* ABeeZee */ = {
+			isa = PBXGroup;
+			children = (
+				0E6E3C5319B7784900221771 /* ABeeZee-Regular.otf */,
+			);
+			name = ABeeZee;
+			sourceTree = "<group>";
+		};
+		0E6E3C6619B778C900221771 /* Amble */ = {
+			isa = PBXGroup;
+			children = (
+				0E6E3C6319B778C100221771 /* Amble-LightCondensedItalic.ttf */,
+				0E6E3C6019B778BA00221771 /* Amble-LightItalic.ttf */,
+				0E6E3C5D19B778A700221771 /* Amble-Regular.ttf */,
+				0E6E3C5A19B778A000221771 /* Amble-Light.ttf */,
+				0E6E3C5719B7789900221771 /* Amble-LightCondensed.ttf */,
+			);
+			name = Amble;
+			sourceTree = "<group>";
+		};
+		0E6E3C6A19B7791200221771 /* Cabin */ = {
+			isa = PBXGroup;
+			children = (
+				0E6E3C6719B7791000221771 /* Cabin-Regular.otf */,
+			);
+			name = Cabin;
+			sourceTree = "<group>";
+		};
+		0E6E3C7419B7796900221771 /* CooperHewitt */ = {
+			isa = PBXGroup;
+			children = (
+				0E6E3C7119B7796200221771 /* CooperHewitt-Book.otf */,
+				0E6E3C6E19B7795000221771 /* CooperHewitt-LightItalic.otf */,
+				0E6E3C6B19B7794A00221771 /* CooperHewitt-Light.otf */,
+			);
+			name = CooperHewitt;
+			sourceTree = "<group>";
+		};
+		0E6E3C7819B779AA00221771 /* Hattori Hanzo */ = {
+			isa = PBXGroup;
+			children = (
+				0E6E3C7519B779A300221771 /* Hattori_Hanzo.otf */,
+			);
+			name = "Hattori Hanzo";
+			sourceTree = "<group>";
+		};
+		0E6E3C7F19B78A5400221771 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				0E3CCDBE19B4D56000AF1D94 /* UIColor+AppColors.h */,
+				0E3CCDBF19B4D56000AF1D94 /* UIColor+AppColors.m */,
+				0E3CCDC119B4EDF500AF1D94 /* UIFont+AppFonts.h */,
+				0E3CCDC219B4EDF500AF1D94 /* UIFont+AppFonts.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		EB2D84161996E964005E4384 /* Room View */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,10 +380,7 @@
 				EB106238198D42A800C2D084 /* GBeaconManager.m */,
 				EB10622B198D414E00C2D084 /* GBeacon.h */,
 				EB10622C198D414E00C2D084 /* GBeacon.m */,
-				0E3CCDBE19B4D56000AF1D94 /* UIColor+AppColors.h */,
-				0E3CCDBF19B4D56000AF1D94 /* UIColor+AppColors.m */,
-				0E3CCDC119B4EDF500AF1D94 /* UIFont+AppFonts.h */,
-				0E3CCDC219B4EDF500AF1D94 /* UIFont+AppFonts.m */,
+				0E6E3C7F19B78A5400221771 /* Categories */,
 				EB2D84171996E976005E4384 /* Beacon Cell View */,
 				EB2D84161996E964005E4384 /* Room View */,
 				EBFF92B81983DBC9001BFE63 /* Images.xcassets */,
@@ -265,6 +392,7 @@
 		EBFF92A71983DBC9001BFE63 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0E6E3C4C19B777D600221771 /* Fonts */,
 				EBFF92A81983DBC9001BFE63 /* Gimbal-Info.plist */,
 				EBFF92A91983DBC9001BFE63 /* InfoPlist.strings */,
 				EBFF92AC1983DBC9001BFE63 /* main.m */,
@@ -434,11 +562,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E6E3C7A19B779C800221771 /* New_Cicle_Fina.ttf in Resources */,
+				0E6E3C7619B779A300221771 /* Hattori_Hanzo.otf in Resources */,
+				0E6E3C7D19B779E500221771 /* OpenSans-CondLight.ttf in Resources */,
 				EBFF92F61983F5E5001BFE63 /* UserContext.plist in Resources */,
+				0E6E3C4819B7758600221771 /* Aller_Lt.ttf in Resources */,
 				EBFF92B91983DBC9001BFE63 /* Images.xcassets in Resources */,
+				0E6E3C5819B7789900221771 /* Amble-LightCondensed.ttf in Resources */,
+				0E6E3C6119B778BA00221771 /* Amble-LightItalic.ttf in Resources */,
+				0E6E3C6819B7791000221771 /* Cabin-Regular.otf in Resources */,
 				EBFF92AB1983DBC9001BFE63 /* InfoPlist.strings in Resources */,
+				0E6E3C6F19B7795000221771 /* CooperHewitt-LightItalic.otf in Resources */,
+				0E6E3C5E19B778A700221771 /* Amble-Regular.ttf in Resources */,
+				0E6E3C4E19B777F100221771 /* Aller_Rg.ttf in Resources */,
 				EBFF92B41983DBC9001BFE63 /* Main.storyboard in Resources */,
+				0E6E3C5419B7784900221771 /* ABeeZee-Regular.otf in Resources */,
+				0E6E3C5119B7781C00221771 /* Aller_LtIt.ttf in Resources */,
+				0E6E3C7219B7796200221771 /* CooperHewitt-Book.otf in Resources */,
+				0E6E3C6419B778C100221771 /* Amble-LightCondensedItalic.ttf in Resources */,
 				EBFF92EE1983E378001BFE63 /* DataModels.bundle in Resources */,
+				0E6E3C5B19B778A000221771 /* Amble-Light.ttf in Resources */,
+				0E6E3C6C19B7794A00221771 /* CooperHewitt-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +591,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBFF92CA1983DBC9001BFE63 /* InfoPlist.strings in Resources */,
+				0E6E3C7019B7795000221771 /* CooperHewitt-LightItalic.otf in Resources */,
+				0E6E3C6519B778C100221771 /* Amble-LightCondensedItalic.ttf in Resources */,
+				0E6E3C4F19B777F100221771 /* Aller_Rg.ttf in Resources */,
+				0E6E3C7B19B779C800221771 /* New_Cicle_Fina.ttf in Resources */,
+				0E6E3C6D19B7794A00221771 /* CooperHewitt-Light.otf in Resources */,
+				0E6E3C7319B7796200221771 /* CooperHewitt-Book.otf in Resources */,
+				0E6E3C5519B7784900221771 /* ABeeZee-Regular.otf in Resources */,
+				0E6E3C7E19B779E500221771 /* OpenSans-CondLight.ttf in Resources */,
+				0E6E3C7719B779A300221771 /* Hattori_Hanzo.otf in Resources */,
+				0E6E3C5C19B778A000221771 /* Amble-Light.ttf in Resources */,
+				0E6E3C5219B7781C00221771 /* Aller_LtIt.ttf in Resources */,
+				0E6E3C5F19B778A700221771 /* Amble-Regular.ttf in Resources */,
+				0E6E3C6919B7791000221771 /* Cabin-Regular.otf in Resources */,
+				0E6E3C4919B7758600221771 /* Aller_Lt.ttf in Resources */,
+				0E6E3C5919B7789900221771 /* Amble-LightCondensed.ttf in Resources */,
+				0E6E3C6219B778BA00221771 /* Amble-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
