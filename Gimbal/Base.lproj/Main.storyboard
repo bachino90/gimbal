@@ -114,6 +114,9 @@
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="rssiButtonTapped:" destination="ebQ-4b-Fr0" eventType="touchUpInside" id="nvJ-9F-o2O"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -149,6 +152,9 @@
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="distanceButtonTapped:" destination="ebQ-4b-Fr0" eventType="touchUpInside" id="nsc-dn-3Ao"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -171,8 +177,10 @@
                     <navigationItem key="navigationItem" id="PJH-Ke-eGq"/>
                     <connections>
                         <outlet property="distanceLabel" destination="zfi-Jm-MSU" id="YNG-Ys-X5J"/>
+                        <outlet property="distanceView" destination="RP0-In-INo" id="DoX-Nw-qra"/>
                         <outlet property="graphView" destination="dbk-Vb-126" id="Iz3-i8-Dqg"/>
                         <outlet property="rssiLabel" destination="2Tv-L4-E2d" id="TyT-Vv-jH6"/>
+                        <outlet property="rssiView" destination="gNn-8H-4Bm" id="U4l-S0-xRi"/>
                         <outlet property="uuidLabel" destination="Jtf-dV-23u" id="r2J-JA-Xyl"/>
                     </connections>
                 </viewController>

@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *rssiLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *uuidLabel;
+@property (weak, nonatomic) IBOutlet UIView *rssiView;
+@property (weak, nonatomic) IBOutlet UIView *distanceView;
 @end
 
 @implementation GBeaconViewController
@@ -33,13 +35,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     // Set the background and shadow image to get rid of the line.
-    self.view.backgroundColor = [UIColor navBarColor];//[UIColor colorWithRed:(253/255.0) green:(146/255.0) blue:(39/255.0) alpha:1.0];
-    self.uuidLabel.text = [NSString stringWithFormat:@"%@",self.beacon.identifier];
-
-    //[self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    //self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
-    
     [self setUpView];
+    
+}
+
+- (void)setUpView {
+    self.view.backgroundColor = [UIColor navBarColor];//[UIColor colorWithRed:(253/255.0) green:(146/255.0) blue:(39/255.0) alpha:1.0];
+    
+    self.graphView.clearBackground = NO;
+    self.graphView.graphType = GraphTypeRSSI;
+    //self.graphView.beacon = self.beacon;
+    
+    self.rssiLabel.text = [NSString stringWithFormat:@"%i",self.beacon.lastRSSI];
+    self.rssiView.backgroundColor = [UIColor backgroundColorForType:GraphTypeRSSI];
+    self.distanceLabel.text = [NSString stringWithFormat:@"%.2f",self.beacon.lastDistance];
+    self.distanceView.backgroundColor = [UIColor backgroundColorForType:GraphTypeDistance];
+    
+    self.uuidLabel.text = [NSString stringWithFormat:@"%@",self.beacon.identifier];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -65,21 +77,28 @@
 
 - (void)setBeacon:(GBeacon *)beacon {
     _beacon = beacon;
+    self.graphView.beacon = self.beacon;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"updateIndex"]) {
         self.beacon = (GBeacon *)object;
-        [self setUpView];
+        //[self setUpView];
     }
 }
 
-- (void)setUpView {
-    self.graphView.beacon = self.beacon;
-    self.rssiLabel.text = [NSString stringWithFormat:@"%i",self.beacon.lastRSSI];
-    self.distanceLabel.text = [NSString stringWithFormat:@"%.2f",self.beacon.lastDistance];
-    self.graphView.clearBackground = NO;
+- (IBAction)rssiButtonTapped:(UIButton *)sender {
+    if (self.graphView.graphType != GraphTypeRSSI) {
+        self.graphView.graphType = GraphTypeRSSI;
+    }
 }
+
+- (IBAction)distanceButtonTapped:(UIButton *)sender {
+    if (self.graphView.graphType != GraphTypeDistance) {
+        self.graphView.graphType = GraphTypeDistance;
+    }
+}
+
 
 /*
 #pragma mark - Navigation

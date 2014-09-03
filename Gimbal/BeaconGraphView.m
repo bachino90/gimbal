@@ -41,7 +41,7 @@
 #define GRID_X_MARGIN 0.0
 
 - (void)setUpView {
-    self.clearBackground = NO;
+    self.clearBackground = YES;
     self.backgroundColor = [UIColor clearColor];
     self.gridView = [[GraphGridView alloc]initWithFrame:CGRectMake(GRID_X_MARGIN, 0.0, self.frame.size.width-GRID_X_MARGIN, self.frame.size.height)];
     self.axisView = [[GraphAxisView alloc]initWithFrame:CGRectMake(0.0, 0.0, 20.0, self.frame.size.height)];
