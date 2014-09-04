@@ -61,9 +61,9 @@
 
 + (RGBAColor)roomViewBeaconColor {
     RGBAColor color;
-    color.red = 95/255.0;//241/255.0;
-    color.green = 95/255.0;//59/255.0;
-    color.blue = 114/255.0;//94/255.0;
+    color.red = 44/255.0;//95/255.0;//241/255.0;
+    color.green = 218/255.0;//95/255.0;//59/255.0;
+    color.blue = 172/255.0;//114/255.0;//94/255.0;
     color.alpha = 1.0;
     return color;//[UIColor blueColor];
 }
