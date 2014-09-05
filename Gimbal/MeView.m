@@ -10,4 +10,13 @@
 
 @implementation MeView
 
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.color = [UIColor roomViewMeColor];
+    }
+    return self;
+}
+
 @end

@@ -19,7 +19,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        // Initialization code
         self.backgroundColor = [UIColor clearColor];
         
         // Initialization code
@@ -28,7 +27,7 @@
         tempTiledLayer.levelsOfDetailBias = 2;
         self.opaque=YES;
         
-        self.color = [UIColor roomViewMeColor];
+        self.color = [UIColor roomViewBeaconColor];
     }
     return self;
 }
