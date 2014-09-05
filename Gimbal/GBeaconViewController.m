@@ -86,7 +86,6 @@
     [super viewWillDisappear:animated];
     @try {
         [self.beacon removeObserver:self forKeyPath:KVO_KEY_PATH];
-        //[self.visibleCells removeObject:[self.tableView indexPathForCell:cell]];
     }
     @catch (NSException * __unused exception) {
     }
