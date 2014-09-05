@@ -58,7 +58,6 @@
     self.graphView.clearBackground = YES;
     self.graphView.graphType = GraphTypeRSSI;
     
-    self.rssiLabel.text = [NSString stringWithFormat:@"%li",(long)self.beacon.lastRSSI];
     self.rssiLabel.font = [UIFont appFontWithSize:31.0];
     
     self.rssiView.backgroundColor = [UIColor backgroundColorForType:GraphTypeRSSI];
@@ -87,7 +86,6 @@
     [super viewWillDisappear:animated];
     @try {
         [self.beacon removeObserver:self forKeyPath:KVO_KEY_PATH];
-        //[self.visibleCells removeObject:[self.tableView indexPathForCell:cell]];
     }
     @catch (NSException * __unused exception) {
     }
@@ -102,6 +100,8 @@
 - (void)setBeacon:(GBeacon *)beacon {
     _beacon = beacon;
     self.graphView.beacon = self.beacon;
+    self.distanceLabel.text = [NSString stringWithFormat:@"%.2f",beacon.lastDistance];
+    self.rssiLabel.text = [NSString stringWithFormat:@"%li",(long)self.beacon.lastRSSI];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {

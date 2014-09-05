@@ -16,6 +16,7 @@
     #import "UIColor+AppColors.h"
     #import "UIFont+AppFonts.h"
     #define KVO_KEY_PATH @"updateIndex"
+    #define LITTLE_CIRCLE_WIDTH 5.0f
     #define NUMBER_OF_RECORDS 20
     #define RSSI_ONE_METER -77.0f
     #define MIN_RSSI -30

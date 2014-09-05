@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CircleView.h"
 
-@interface MeView : UIView
+@interface MeView : CircleView
 
 @end
