@@ -66,21 +66,13 @@
     float heightOfGaps = numberOfGaps * self.deltaLine;
     float margin = (height-heightOfGaps)/2.0f;
     
-    
-    //CGSize size = CGSizeMake(rect.size.width, rect.size.height);
-    //CGContextRef context = UIGraphicsGetCurrentContext();
-    //draw stroke
-    //CGContextSetStrokeColorWithColor(context, self.color.CGColor);
-    //CGContextSetLineWidth(context, 1.5);
-    //CGContextSetTextDrawingMode(context, kCGTextFill);
-    
     UIFont *font = [UIFont appFontWithSize:10.0];
     float y = margin - RECT_HEIGHT - 2.0;
-    y+=self.deltaLine;
-    CGRect rect2 = CGRectMake(3.0, y, width, RECT_HEIGHT);
-    for (int i=1; i<=numberOfGaps; i++) {
+    //y+=self.deltaLine;
+    CGRect rect2; //= CGRectMake(3.0, y, width, RECT_HEIGHT);
+    for (int i=0; i<=numberOfGaps; i++) {
         
-        rect2 = CGRectMake(3.0, y, width, 10.0);
+        rect2 = CGRectMake(3.0, y, width, RECT_HEIGHT);
         [self.history[i] drawInRect:CGRectIntegral(rect2) withAttributes:@{NSFontAttributeName: font, NSForegroundColorAttributeName: self.color}];
         
         y+=self.deltaLine;

@@ -31,6 +31,7 @@
 @property (nonatomic, readwrite) NSString *minorID;
 @property (nonatomic, readwrite) NSString *store;
 @property (nonatomic, readwrite) NSString *area;
+@property (nonatomic, readwrite) CLLocationCoordinate2D gpsLocation;
 
 @end    
 

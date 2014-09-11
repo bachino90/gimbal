@@ -18,12 +18,18 @@
 @property (weak, nonatomic) IBOutlet UILabel *uuidLabel;
 @property (weak, nonatomic) IBOutlet UIView *rssiView;
 @property (weak, nonatomic) IBOutlet UIView *distanceView;
+@property (weak, nonatomic) IBOutlet UILabel *storeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *areaLabel;
+@property (weak, nonatomic) IBOutlet UILabel *majorIdLabel;
+@property (weak, nonatomic) IBOutlet UILabel *minorIdLabel;
+
 //Constant Labels
 @property (weak, nonatomic) IBOutlet UILabel *dbLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mLabel;
-@property (weak, nonatomic) IBOutlet UILabel *clientTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *storeTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *areaTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rssiConstantLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceConstantLabel;
 @end
 
 @implementation GBeaconViewController
@@ -48,12 +54,28 @@
 
 - (void)setUpView {
     self.view.backgroundColor = [UIColor navBarColor];
-    self.mLabel.font = [UIFont appFontWithSize:11.0];
-    self.dbLabel.font = [UIFont appFontWithSize:11.0];
-    self.clientTitleLabel.font = [UIFont appFontWithSize:11.0];
-    self.storeTitleLabel.font = [UIFont appFontWithSize:11.0];
-    self.areaTitleLabel.font = [UIFont appFontWithSize:11.0];
+    self.mLabel.font = [UIFont appFontWithSize:12.0];
+    self.dbLabel.font = [UIFont appFontWithSize:12.0];
+    self.storeTitleLabel.font = [UIFont appFontWithSize:13.0];
+    //self.storeTitleLabel.textColor = [UIColor backgroundColor];
+    self.areaTitleLabel.font = [UIFont appFontWithSize:13.0];
+    //self.areaTitleLabel.textColor = [UIColor backgroundColor];
+    self.rssiConstantLabel.font = [UIFont appFontWithSize:14.0];
+    self.rssiConstantLabel.textColor = [UIColor backgroundColorForType:GraphTypeRSSI];
+    
+    self.distanceConstantLabel.font = [UIFont appFontWithSize:14.0];
+    self.distanceConstantLabel.textColor = [UIColor backgroundColorForType:GraphTypeDistance];
+    
     self.uuidLabel.font = [UIFont appFontWithSize:15.0];
+    //self.uuidLabel.textColor = [UIColor backgroundColor];
+    self.storeLabel.font = [UIFont appFontWithSize:20.0];
+    //self.storeLabel.textColor = [UIColor backgroundColor];
+    self.areaLabel.font = [UIFont appFontWithSize:20.0];
+    //self.areaLabel.textColor = [UIColor backgroundColor];
+    self.majorIdLabel.font = [UIFont appFontWithSize:20.0];
+    //self.majorIdLabel.textColor = [UIColor backgroundColor];
+    self.minorIdLabel.font = [UIFont appFontWithSize:20.0];
+    //self.minorIdLabel.textColor = [UIColor backgroundColor];
     
     self.graphView.clearBackground = YES;
     self.graphView.graphType = GraphTypeRSSI;

@@ -20,7 +20,7 @@
     #define NUMBER_OF_RECORDS 20
     #define RSSI_ONE_METER -77.0f
     #define MIN_RSSI -30
-    #define MAX_RSSI -100
+    #define MAX_RSSI -120
     #define MIN_DIST 0
     #define MAX_DIST 10
     #define MIN_TEMP -5

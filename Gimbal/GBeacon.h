@@ -30,6 +30,7 @@
 @property (nonatomic, readonly) NSString *minorID;
 @property (nonatomic, readonly) NSString *store;
 @property (nonatomic, readonly) NSString *area;
+@property (nonatomic, readonly) CLLocationCoordinate2D gpsLocation;
 
 @property (nonatomic) NSUInteger updateIndex;
 
