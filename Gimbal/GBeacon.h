@@ -19,6 +19,9 @@
 @property (nonatomic, readonly) int index;
 
 @property (nonatomic, readonly) CGPoint location;
+@property (nonatomic) CGFloat x;
+@property (nonatomic) CGFloat y;
+@property (nonatomic) CGFloat z;
 @property (nonatomic, readonly) NSInteger lastRSSI;
 @property (nonatomic, readonly) CGFloat lastDistance;
 @property (nonatomic, readonly) CGFloat timeToLastUpdate;

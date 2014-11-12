@@ -10,6 +10,7 @@
 #import "GBeaconView.h"
 #import "MeView.h"
 #import "GBeacon.h"
+#import "GBeaconManager.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -58,7 +59,7 @@
 - (void)addBeacon:(GBeacon *)beacon {
     GBeaconView *beaconView = [[GBeaconView alloc]initWithBeacon:beacon];
     [beacon addObserver:beaconView forKeyPath:KVO_KEY_PATH options:NSKeyValueObservingOptionNew context:NULL];
-    beaconView.center = CGPointMake(self.scale * beacon.location.x, self.scale * beacon.location.y);
+    beaconView.center = CGPointMake(self.scale * beacon.x, self.scale * beacon.y);
     [self addSubview:beaconView];
     [self.beaconsViews setObject:beaconView forKey:beacon.identifier];
 }
@@ -68,6 +69,15 @@
     [beacon removeObserver:beaconView forKeyPath:KVO_KEY_PATH];
     [beaconView removeFromSuperview];
     [self.beaconsViews removeObjectForKey:beacon.identifier];
+}
+
+- (void)acomodateBeacons {
+    for (NSString *beaconID in self.beaconsViews) {
+        GBeaconView *beaconView = self.beaconsViews[beaconID];
+        GBeaconManager *beaconManager = [GBeaconManager sharedManager];
+        GBeacon *beacon = [beaconManager beaconWithID:beaconID];
+        beaconView.center = CGPointMake(self.scale * beacon.x, self.scale * beacon.y);
+    }
 }
 
 - (void)addObservers {

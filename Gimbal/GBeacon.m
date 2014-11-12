@@ -62,12 +62,20 @@
     if (self) {
         self.startTime = visit.startTime;
         self.identifier = visit.transmitter.identifier;
+        self.x = 0.0;
+        self.y = 0.0;
         if ([visit.transmitter.name isEqual:@"My First Beacon"]) {
             self.location = CGPointMake(1.0, 0.5);
+            self.x = 1.0;
+            self.y = 0.5;
         } else if ([visit.transmitter.name isEqual:@"My Second Beacon"]) {
             self.location = CGPointMake(1.0, 1.5);
+            self.x = 1.0;
+            self.y = 1.5;
         } else if ([visit.transmitter.name isEqual:@"My Third Beacon"]) {
             self.location = CGPointMake(2.0, 0.5);
+            self.x = 2.0;
+            self.y = 0.5;
         }
     }
     return self;

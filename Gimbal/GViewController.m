@@ -71,6 +71,7 @@
     self.normalTableViewFrame = self.tableView.frame;
     self.fullScrollViewFrame = CGRectMake(self.scrollView.frame.origin.x, self.scrollView.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
     self.fullTableViewFrame = CGRectMake(self.tableView.frame.origin.x, self.view.frame.size.height, self.tableView.frame.size.width, self.tableView.frame.size.height);
+    [self.roomView acomodateBeacons];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

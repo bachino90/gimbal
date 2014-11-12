@@ -52,6 +52,10 @@
     return self.beacons[self.beaconsID[index]];
 }
 
+- (GBeacon *)beaconWithID:(NSString *)beaconID {
+    return self.beacons[beaconID];
+}
+
 - (void)addNewBeacon:(FYXVisit *)visit {
     GBeacon *newBeacon = [[GBeacon alloc]initWithVisit:visit];
     [self.beacons setObject:newBeacon forKey:visit.transmitter.identifier];

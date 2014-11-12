@@ -17,6 +17,7 @@
 
 - (void)addBeacon:(GBeacon *)beacon;
 - (void)removeBeacon:(GBeacon *)beacon;
+- (void)acomodateBeacons;
 
 - (void)addObservers;
 - (void)removeObservers;

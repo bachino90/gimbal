@@ -25,5 +25,6 @@
 + (instancetype)sharedManager;
 - (void)startScanning;
 - (GBeacon *)beaconAtIndex:(NSInteger)index;
+- (GBeacon *)beaconWithID:(NSString *)beaconID;
 
 @end

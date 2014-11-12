@@ -10,8 +10,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import "GBeacon.h"
 #import "BeaconGraphView.h"
+#import "GEditBeaconViewController.h"
 
-@interface GBeaconViewController ()
+@interface GBeaconViewController () <BackHomeProtocol>
 @property (nonatomic, weak) IBOutlet BeaconGraphView *graphView;
 @property (weak, nonatomic) IBOutlet UILabel *rssiLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
@@ -162,8 +163,15 @@
     }
 }
 
+#pragma mark - BackHomeProtocol
 
-/*
+- (void)backHomeFrom:(UIViewController *)vc {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -171,7 +179,13 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"EditBeaconSegue"]) {
+        UINavigationController *nc = (UINavigationController *)segue.destinationViewController;
+        GEditBeaconViewController *vc = (GEditBeaconViewController *)nc.topViewController;
+        vc.delegate = self;
+        vc.beacon = self.beacon;
+    }
 }
-*/
+
 
 @end
